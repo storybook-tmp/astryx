@@ -467,6 +467,46 @@ Given the tension between StyleX's enforcement and Tailwind's ecosystem:
 **Pros**: Strict internals, compatible externally
 **Cons**: Two mental models for contributors
 
+### Migration Tool: tw-to-stylex
+
+[tw-to-stylex](https://github.com/nmn/tw-to-stylex) is a code translator created by Naman Goel (StyleX maintainer at Meta) that converts Tailwind CSS code to StyleX syntax.
+
+**What it does**:
+```tsx
+// Input (Tailwind)
+<div className={cn("m-1 text-red-500", prop.className)} />
+
+// Output (StyleX)
+// Converts to stylex.create() and stylex.props()
+```
+
+**Current status** (as of January 2025):
+- ✅ Handles `cn()` patterns and converts to StyleX props
+- ✅ Manages multiple StyleX imports
+- ✅ Prevents duplicate `stylex.create` calls
+- ❌ Dynamic values with template literals not yet supported
+- ❌ Custom `tw` function (planned)
+
+**Relevance to XDS**:
+
+| Use Case | Value |
+|----------|-------|
+| **Migration path** | Existing Tailwind code → StyleX conversion |
+| **AI-generated code** | LLM generates Tailwind (more training data) → convert to StyleX |
+| **Incremental adoption** | Start with Tailwind, migrate components gradually |
+
+**Limitations**: The tool has gaps with dynamic tokens and template literals. For XDS component authoring, writing StyleX directly is still recommended.
+
+**Potential workflow**:
+1. AI generates Tailwind code (familiar, more training data)
+2. tw-to-stylex converts to StyleX
+3. Manual cleanup for edge cases
+4. Full compile-time enforcement
+
+This could bridge the "AI familiarity gap" — LLMs generate what they know (Tailwind), then tooling converts to what we want (StyleX).
+
+Source: [tw-to-stylex GitHub](https://github.com/nmn/tw-to-stylex)
+
 ---
 
 ## Variant Management Tools: tw-classed, CVA, and Tailwind Variants
@@ -1339,3 +1379,4 @@ The swizzle API provides a middle ground that actually *reduces* unnecessary com
 - [BetterStack: StyleX for Scalable CSS](https://betterstack.com/community/guides/scaling-nodejs/stylex-metas/)
 - [Tailwind v4 Theme Documentation](https://tailwindcss.com/docs/theme)
 - [Tailwind at Scale Issues](https://dev.to/gouranga-das-khulna/why-tailwind-css-might-be-hurting-your-large-scale-projects-3k73)
+- [tw-to-stylex: Tailwind to StyleX Converter](https://github.com/nmn/tw-to-stylex)
