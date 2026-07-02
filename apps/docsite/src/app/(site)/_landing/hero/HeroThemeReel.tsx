@@ -136,7 +136,7 @@ const styles = stylex.create({
   //
   // The extra MUST match the showcase overlay's corner radius, which is the
   // docsite (Astryx) --radius-page = 32px. We can't read --radius-page here
-  // because this fill renders inside <XDSTheme theme={active}>, where the
+  // because this fill renders inside <Theme theme={active}>, where the
   // active theme overrides it — e.g. Y2K sets --radius-page: 0, which left the
   // fill 32px short and exposed the docsite body color in the rounded corners.
   // Hence a fixed 32px tied to the overlay radius rather than the theme token.

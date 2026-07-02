@@ -366,7 +366,7 @@ describe('componentRegistry', () => {
     const core = components['@astryxdesign/core'];
     // Public hooks (useTheme, useToast, useTableSortable, …) ship example
     // blocks; internal utility hooks (useFocusTrap, useScrollLock, …) do not.
-    // Post un-prefix migration (P2380608025) the doc `name` is bare for both,
+    // Post un-prefix migration the doc `name` is bare for both,
     // so the public set is identified by having an example-registry entry
     // rather than by a name prefix.
     const hooks = core.filter(

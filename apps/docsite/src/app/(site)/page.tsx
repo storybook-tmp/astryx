@@ -11,7 +11,7 @@ import {Grid} from '@astryxdesign/core/Grid';
 import {Button} from '@astryxdesign/core/Button';
 import {Theme} from '@astryxdesign/core/theme';
 import {spacingVars} from '@astryxdesign/core/theme/tokens.stylex';
-// Built theme (__built:true) so <XDSTheme> uses the pre-built CSS and skips
+// Built theme (__built:true) so <Theme> uses the pre-built CSS and skips
 // runtime style injection. Importing the source astryxTheme.ts re-triggers it.
 import {astryxTheme} from '@/themes/astryx';
 import {layout} from '../../layout.stylex';

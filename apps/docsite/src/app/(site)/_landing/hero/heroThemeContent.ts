@@ -21,7 +21,7 @@ import {BRAND_BLUE} from '@/constants';
 // Sentinel for the docsite's local brand theme (not an @astryxdesign/theme-* package).
 const ASTRYX = 'astryx';
 
-// Shared XDS asset CDN. The per-theme reel cards pull the same product photos
+// Shared Astryx asset CDN. The per-theme reel cards pull the same product photos
 // the /themes showcase uses (see themeShowcaseContent.ts) so the hero and the
 // gallery stay in sync.
 const IMAGE_CDN = 'https://lookaside.facebook.com/assets/astryx';
