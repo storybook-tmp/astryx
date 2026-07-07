@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Timestamp} from '@astryxdesign/core/Timestamp';
 import {Text} from '@astryxdesign/core/Text';
 

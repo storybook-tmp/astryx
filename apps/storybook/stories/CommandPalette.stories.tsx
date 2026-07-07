@@ -8,7 +8,7 @@
  * 2. renderItem — custom item content, grouping still automatic
  */
 import {useState, useMemo} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {
   CommandPalette,
   CommandPaletteInput,
@@ -48,10 +48,7 @@ export const Default: Story = {
     );
     return (
       <>
-        <Button
-          label="Open Command Palette"
-          onClick={() => setIsOpen(true)}
-        />
+        <Button label="Open Command Palette" onClick={() => setIsOpen(true)} />
         <CommandPalette
           isOpen={isOpen}
           onOpenChange={setIsOpen}

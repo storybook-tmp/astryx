@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Toolbar} from '@astryxdesign/core/Toolbar';
 import {TabList, Tab} from '@astryxdesign/core/TabList';
 import {Button} from '@astryxdesign/core/Button';

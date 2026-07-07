@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {ChartV2 as Chart, bar, line, area} from '@astryxdesign/lab';
 import {
   ChartV2Grid as ChartGrid,

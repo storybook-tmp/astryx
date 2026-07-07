@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Tooltip, useTooltip} from '@astryxdesign/core/Tooltip';
 import {Button} from '@astryxdesign/core/Button';
 import {HStack} from '@astryxdesign/core/Layout';
@@ -142,9 +142,7 @@ export const LongContent: Story = {
     placement: 'above',
     content:
       'This is a longer tooltip that contains more detailed information about the element.',
-    children: (
-      <Button label="Hover for more info">Hover for more info</Button>
-    ),
+    children: <Button label="Hover for more info">Hover for more info</Button>,
   },
 };
 

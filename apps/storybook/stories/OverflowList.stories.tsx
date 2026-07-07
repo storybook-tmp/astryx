@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {useState} from 'react';
 import {OverflowList} from '@astryxdesign/core/OverflowList';
 import {Button} from '@astryxdesign/core/Button';
@@ -270,11 +270,7 @@ export const DynamicItems: Story = {
             size="sm"
             onClick={() => setCount(c => Math.max(1, c - 1))}
           />
-          <Button
-            label="Add"
-            size="sm"
-            onClick={() => setCount(c => c + 1)}
-          />
+          <Button label="Add" size="sm" onClick={() => setCount(c => c + 1)} />
           <span>{count} items</span>
         </div>
         <div

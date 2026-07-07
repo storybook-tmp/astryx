@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {TreeList} from '@astryxdesign/core/TreeList';
 import type {TreeListItemData} from '@astryxdesign/core/TreeList';
 import {Icon} from '@astryxdesign/core/Icon';
@@ -265,12 +265,22 @@ export const WithEndContent: Story = {
         isExpanded: true,
         endContent: <Badge label="3" />,
         children: [
-          {id: 'unread', label: 'Unread', onClick: noop, endContent: <Badge label="3" />},
+          {
+            id: 'unread',
+            label: 'Unread',
+            onClick: noop,
+            endContent: <Badge label="3" />,
+          },
           {id: 'starred', label: 'Starred', onClick: noop},
         ],
       },
       {id: 'sent', label: 'Sent', onClick: noop},
-      {id: 'drafts', label: 'Drafts', onClick: noop, endContent: <Badge label="1" />},
+      {
+        id: 'drafts',
+        label: 'Drafts',
+        onClick: noop,
+        endContent: <Badge label="1" />,
+      },
     ],
   },
 };
@@ -292,7 +302,12 @@ export const DisabledItems: Story = {
           },
         ],
       },
-      {id: 'disabled-parent', label: 'Disabled Parent', onClick: noop, isDisabled: true},
+      {
+        id: 'disabled-parent',
+        label: 'Disabled Parent',
+        onClick: noop,
+        isDisabled: true,
+      },
     ],
   },
 };

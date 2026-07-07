@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {
   Calendar,
   type ISODateString,
@@ -21,11 +21,7 @@ export const Default: Story = {
   render: () => {
     const [value, setValue] = useState<ISODateString | undefined>(undefined);
     return (
-      <Calendar
-        mode="single"
-        value={value}
-        onChange={val => setValue(val)}
-      />
+      <Calendar mode="single" value={value} onChange={val => setValue(val)} />
     );
   },
 };

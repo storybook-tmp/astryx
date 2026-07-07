@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useRef, type ReactNode} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {
   Outline,
   useOutlineFromDOM,
@@ -130,8 +130,8 @@ export const WithDocument: Story = {
         <section>
           <h2 id="installation">Installation</h2>
           <p>
-            Install the package, wrap the app with Theme, and import
-            components from their subpaths.
+            Install the package, wrap the app with Theme, and import components
+            from their subpaths.
           </p>
         </section>
         <section>
@@ -147,8 +147,9 @@ export const WithDocument: Story = {
           </p>
           <h3 id="component-overrides">Component overrides</h3>
           <p>
-            Component overrides target the stable Astryx selector surface emitted
-            by each component: astryx-* classes plus data-* prop reflections.
+            Component overrides target the stable Astryx selector surface
+            emitted by each component: astryx-* classes plus data-* prop
+            reflections.
           </p>
         </section>
         <section>

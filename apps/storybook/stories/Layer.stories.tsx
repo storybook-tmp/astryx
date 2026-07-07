@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import * as stylex from '@stylexjs/stylex';
 import {useLayer} from '@astryxdesign/core/Layer';
 import {LayerProvider} from '@astryxdesign/core/Layer';
@@ -156,7 +156,6 @@ function LayerProviderDemo() {
     <LayerProvider toast={{position: 'topEnd', maxVisible: 3}}>
       <div style={{padding: 16}}>
         <Text type="body">
-          
           LayerProvider wraps your app to configure layer systems (toast
           positioning, max visible toasts). It is optional; hooks fall back to
           defaults when no provider exists.

@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {
   Chart,
   ChartAxis,
@@ -70,11 +70,7 @@ function ColorRampsDemo() {
       {hues.map(hue => (
         <Stack key={hue} direction="vertical" gap={1}>
           <Text type="label">sequential.{hue}(5)</Text>
-          <Chart
-            data={gridData}
-            xKey="hour"
-            yKeys={['activity']}
-            height={200}>
+          <Chart data={gridData} xKey="hour" yKeys={['activity']} height={200}>
             <ChartAxis position="bottom" />
             <ChartHeatmapGL
               xKey="hour"

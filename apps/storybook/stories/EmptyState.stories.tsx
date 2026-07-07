@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {EmptyState} from '@astryxdesign/core/EmptyState';
 import {Button} from '@astryxdesign/core/Button';
 

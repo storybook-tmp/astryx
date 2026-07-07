@@ -1,13 +1,27 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Preview, Decorator} from '@storybook/react';
+/**
+ * @file preview.tsx
+ * @input Storybook preview globals, Astryx themes, MSW handlers, and reset CSS
+ * @output Shared decorators/loaders for rendering stories with production-like theme context
+ * @position Storybook preview runtime; keep provider and mock setup centralized for stories
+ *
+ * SYNC: When modified, update /apps/storybook/README.md
+ */
+
+import type {Preview, Decorator} from '@storybook/react-vite';
 import * as React from 'react';
 import {Theme, LayerProvider} from '@astryxdesign/core';
 import {neutralTheme} from '@astryxdesign/theme-neutral';
 import {stoneTheme} from '@astryxdesign/theme-stone';
 import {y2kTheme} from '@astryxdesign/theme-y2k';
+import MockDate from 'mockdate';
+import {initialize, mswLoader} from 'msw-storybook-addon';
+import {mswHandlers} from './msw-handlers';
 // Import the base reset stylesheet
 import '@astryxdesign/core/reset.css';
+
+initialize({onUnhandledRequest: 'bypass'});
 
 /**
  * Map of available themes
@@ -78,9 +92,20 @@ const preview: Preview = {
       },
     },
     backgrounds: {
-      disable: true, // Disable backgrounds addon, use theme instead
+      disabled: true,
     },
     layout: 'fullscreen',
+    msw: {
+      handlers: mswHandlers,
+    },
+  },
+  loaders: [mswLoader],
+  async beforeEach() {
+    MockDate.set('2024-04-01T12:00:00Z');
+
+    return () => {
+      MockDate.reset();
+    };
   },
   globalTypes: {
     astryxTheme: {

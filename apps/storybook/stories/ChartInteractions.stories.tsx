@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {useState, useMemo} from 'react';
 import {
   Chart,
@@ -51,11 +51,7 @@ export const BrushBars: StoryObj = {
         <Text type="supporting" color="secondary">
           Drag to select a range. {selected ?? 'Click to clear.'}
         </Text>
-        <Chart
-          data={monthlyData}
-          xKey="month"
-          yKeys={['revenue']}
-          height={300}>
+        <Chart data={monthlyData} xKey="month" yKeys={['revenue']} height={300}>
           <ChartGrid horizontal />
           <ChartAxis position="bottom" />
           <ChartAxis position="left" />
@@ -89,16 +85,8 @@ export const BrushLine: StoryObj = {
           <ChartGrid horizontal />
           <ChartAxis position="bottom" />
           <ChartAxis position="left" />
-          <ChartLine
-            dataKey="revenue"
-            color={colors.categorical(2)[0]}
-            dots
-          />
-          <ChartLine
-            dataKey="expenses"
-            color={colors.categorical(2)[1]}
-            dots
-          />
+          <ChartLine dataKey="revenue" color={colors.categorical(2)[0]} dots />
+          <ChartLine dataKey="expenses" color={colors.categorical(2)[1]} dots />
           <ChartBrush
             onBrush={(_, sel) => setSelected(`${sel.length} months selected`)}
             onClear={() => setSelected(null)}
@@ -141,11 +129,7 @@ export const Brush2D: StoryObj = {
           <ChartGrid horizontal vertical />
           <ChartAxis position="bottom" />
           <ChartAxis position="left" />
-          <ChartDot
-            dataKey="mpg"
-            color={colors.categorical(1)[0]}
-            radius={3}
-          />
+          <ChartDot dataKey="mpg" color={colors.categorical(1)[0]} radius={3} />
           <ChartBrush
             mode="xy"
             onBrush={(_, sel) => setCount(sel.length)}
@@ -184,11 +168,7 @@ export const Crosshair: StoryObj = {
           <ChartGrid horizontal vertical />
           <ChartAxis position="bottom" />
           <ChartAxis position="left" />
-          <ChartDot
-            dataKey="mpg"
-            color={colors.categorical(1)[0]}
-            radius={3}
-          />
+          <ChartDot dataKey="mpg" color={colors.categorical(1)[0]} radius={3} />
           <ChartTooltip
             crosshair="xy"
             crosshairLabels
@@ -235,11 +215,7 @@ export const ZoomPan: StoryObj = {
           <ChartGrid horizontal vertical />
           <ChartAxis position="bottom" />
           <ChartAxis position="left" />
-          <ChartDot
-            dataKey="mpg"
-            color={colors.categorical(1)[0]}
-            radius={3}
-          />
+          <ChartDot dataKey="mpg" color={colors.categorical(1)[0]} radius={3} />
           <ChartZoom
             onXDomainChange={setXDomain}
             onYDomainChange={setYDomain}
@@ -281,11 +257,7 @@ export const ClickSelect: StoryObj = {
           <ChartGrid horizontal vertical />
           <ChartAxis position="bottom" />
           <ChartAxis position="left" />
-          <ChartDot
-            dataKey="mpg"
-            color={colors.categorical(1)[0]}
-            radius={3}
-          />
+          <ChartDot dataKey="mpg" color={colors.categorical(1)[0]} radius={3} />
           <ChartSelect selected={selected} onSelectionChange={setSelected} />
         </Chart>
       </Stack>
@@ -300,11 +272,7 @@ export const ReferenceLines: StoryObj = {
     return (
       <Stack direction="vertical" gap={4}>
         <Heading level={3}>Reference Lines</Heading>
-        <Chart
-          data={monthlyData}
-          xKey="month"
-          yKeys={['revenue']}
-          height={300}>
+        <Chart data={monthlyData} xKey="month" yKeys={['revenue']} height={300}>
           <ChartGrid horizontal />
           <ChartAxis position="bottom" />
           <ChartAxis position="left" />

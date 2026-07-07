@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Breadcrumbs, BreadcrumbItem} from '@astryxdesign/core/Breadcrumbs';
 import {HomeIcon, Cog6ToothIcon, FolderIcon} from '@heroicons/react/24/outline';
 
@@ -115,9 +115,7 @@ export const DeepHierarchy: Story = {
     <Breadcrumbs>
       <BreadcrumbItem href="/">Home</BreadcrumbItem>
       <BreadcrumbItem href="/products">Products</BreadcrumbItem>
-      <BreadcrumbItem href="/products/electronics">
-        Electronics
-      </BreadcrumbItem>
+      <BreadcrumbItem href="/products/electronics">Electronics</BreadcrumbItem>
       <BreadcrumbItem href="/products/electronics/phones">
         Phones
       </BreadcrumbItem>

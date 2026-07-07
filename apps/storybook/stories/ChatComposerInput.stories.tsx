@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {
   ChatComposer,
   ChatComposerInput,
@@ -140,9 +140,7 @@ export const Disabled: Story = {
     <ChatComposer
       onSubmit={() => {}}
       isDisabled
-      input={
-        <ChatComposerInput isDisabled placeholder="Input is disabled" />
-      }
+      input={<ChatComposerInput isDisabled placeholder="Input is disabled" />}
     />
   ),
 };

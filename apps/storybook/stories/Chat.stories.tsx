@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {
   ChatMessageList,
   ChatMessage,
@@ -54,9 +54,7 @@ For **server state**, use a library like **TanStack Query** or **SWR** — they 
 
 Avoid global state managers unless you have a genuine need for cross-cutting state. Most apps are over-engineered in this area.`}</Markdown>
           <ChatMessageMetadata
-            timestamp={
-              <Timestamp value="2026-03-15T14:30:30" format="time" />
-            }
+            timestamp={<Timestamp value="2026-03-15T14:30:30" format="time" />}
             footer={
               <>
                 <span>Claude Opus 4.6</span>
@@ -130,9 +128,7 @@ const [state, dispatch] = useReducer(reducer, initialState);`}
 | \`useSyncExternalStore\` | External stores | On snapshot change | High | Redux, Zustand, signals |
 | \`useRef\` | Mutable values | Never | Low | DOM refs, timers, previous values |`}</Markdown>
           <ChatMessageMetadata
-            timestamp={
-              <Timestamp value="2026-03-15T14:31:30" format="time" />
-            }
+            timestamp={<Timestamp value="2026-03-15T14:31:30" format="time" />}
             footer={
               <>
                 <span>Claude Opus 4.6</span>
@@ -425,8 +421,7 @@ export const GapOverride: StoryObj = {
           </ChatMessageBubble>
         </ChatMessage>
         <ChatMessage sender="assistant">
-          <ChatMessageBubble
-            metadata={<ChatMessageMetadata footer="Done" />}>
+          <ChatMessageBubble metadata={<ChatMessageMetadata footer="Done" />}>
             The patch is ready for review.
           </ChatMessageBubble>
         </ChatMessage>
@@ -439,9 +434,7 @@ export const SystemMessages: StoryObj = {
   render: () => (
     <div style={{height: 400, display: 'flex', flexDirection: 'column'}}>
       <ChatMessageList>
-        <ChatSystemMessage variant="divider">
-          March 15, 2026
-        </ChatSystemMessage>
+        <ChatSystemMessage variant="divider">March 15, 2026</ChatSystemMessage>
         <ChatMessage
           sender="assistant"
           avatar={<Avatar name="Navi" size="small" />}>
@@ -469,8 +462,7 @@ export const MessageStatus: StoryObj = {
           </ChatMessageBubble>
         </ChatMessage>
         <ChatMessage sender="user">
-          <ChatMessageBubble
-            metadata={<ChatMessageMetadata status="sent" />}>
+          <ChatMessageBubble metadata={<ChatMessageMetadata status="sent" />}>
             Sent
           </ChatMessageBubble>
         </ChatMessage>
@@ -481,14 +473,12 @@ export const MessageStatus: StoryObj = {
           </ChatMessageBubble>
         </ChatMessage>
         <ChatMessage sender="user">
-          <ChatMessageBubble
-            metadata={<ChatMessageMetadata status="read" />}>
+          <ChatMessageBubble metadata={<ChatMessageMetadata status="read" />}>
             Read
           </ChatMessageBubble>
         </ChatMessage>
         <ChatMessage sender="user">
-          <ChatMessageBubble
-            metadata={<ChatMessageMetadata status="error" />}>
+          <ChatMessageBubble metadata={<ChatMessageMetadata status="error" />}>
             Failed to send
           </ChatMessageBubble>
         </ChatMessage>

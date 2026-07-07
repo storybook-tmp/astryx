@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {TimeInput} from '@astryxdesign/core/TimeInput';
 import type {ISOTimeString} from '@astryxdesign/core';
 

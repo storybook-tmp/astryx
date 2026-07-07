@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {
   ChatComposer,
   ChatComposerDrawer,
@@ -361,9 +361,7 @@ export const Feedback: Story = {
             <div style={{width: '100%'}}>
               <List>
                 <ListItem
-                  label={
-                    <Text weight="bold">Do you want to proceed?</Text>
-                  }
+                  label={<Text weight="bold">Do you want to proceed?</Text>}
                 />
                 {options.map(opt => (
                   <ListItem

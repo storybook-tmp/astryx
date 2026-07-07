@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import * as stylex from '@stylexjs/stylex';
 import {colorVars, radiusVars} from '@astryxdesign/core/theme/tokens.stylex';
 import {ResizeHandle, useResizable} from '@astryxdesign/core/Resizable';
@@ -157,9 +157,7 @@ export const Collapsible: Story = {
                     <Text>
                       <span {...stylex.props(ps.sz)}>{sidebar.size}px</span>
                     </Text>
-                    <Text>
-                      Double-click handle or press Enter to collapse.
-                    </Text>
+                    <Text>Double-click handle or press Enter to collapse.</Text>
                   </Stack>
                 </LayoutPanel>
               )}
@@ -288,9 +286,7 @@ export const SnapPoints: Story = {
                     <Text>
                       <span {...stylex.props(ps.sz)}>{sidebar.size}px</span>
                     </Text>
-                    <Text>
-                      Snaps to 56 \u00b7 160 \u00b7 260 \u00b7 400px.
-                    </Text>
+                    <Text>Snaps to 56 \u00b7 160 \u00b7 260 \u00b7 400px.</Text>
                   </Stack>
                 )}
               </LayoutPanel>
@@ -504,8 +500,8 @@ export const WithAppShell: Story = {
                   {nav.isCollapsed ? 'Collapsed' : 'Expanded'}
                 </Text>
                 <Text>
-                  SideNav width driven by useResizable. Double-click handle
-                  to collapse.
+                  SideNav width driven by useResizable. Double-click handle to
+                  collapse.
                 </Text>
               </Stack>
             </LayoutContent>

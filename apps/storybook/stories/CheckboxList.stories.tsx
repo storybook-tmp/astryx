@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {CheckboxList, CheckboxListItem} from '@astryxdesign/core/CheckboxList';
 import {List} from '@astryxdesign/core/List';
 import {Card} from '@astryxdesign/core/Card';

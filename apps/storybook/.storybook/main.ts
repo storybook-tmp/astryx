@@ -1,9 +1,21 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
+// This file has been automatically migrated to valid ESM format by Storybook.
+/**
+ * @file main.ts
+ * @input Storybook React/Vite configuration, Astryx StyleX build plugin
+ * @output Storybook config with Astryx source aliases, Codex MCP, tests, and static assets
+ * @position Storybook app configuration for local development, docs, and Codex review workflows
+ *
+ * SYNC: When modified, update /apps/storybook/README.md
+ */
+
 import type {StorybookConfig} from '@storybook/react-vite';
 import {astryxStylex} from '@astryxdesign/build/vite';
-import path from 'path';
+import path, {dirname} from 'path';
 import {fileURLToPath} from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '../../..');
@@ -17,15 +29,18 @@ const lightningcssTargets = {
 const viteBuildTargets = ['chrome123', 'firefox120', 'safari17.5'];
 
 const config: StorybookConfig = {
-  stories: [
-    '../stories/**/*.mdx',
-    '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+  stories: ['../stories/**/*.stories.tsx'],
+  addons: [
+    getAbsolutePath('@storybook/addon-links'),
+    getAbsolutePath('@storybook/addon-docs'),
+    getAbsolutePath('@storybook/addon-vitest'),
+    getAbsolutePath('@storybook/addon-mcp'),
   ],
-  addons: ['@storybook/addon-links', '@storybook/addon-docs'],
   framework: {
-    name: '@storybook/react-vite',
+    name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
+  staticDirs: ['../public'],
   docs: {defaultName: 'Docs'},
   viteFinal: async config => {
     const filteredPlugins =
@@ -139,3 +154,7 @@ const config: StorybookConfig = {
 };
 
 export default config;
+
+function getAbsolutePath(value: string): string {
+  return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)));
+}

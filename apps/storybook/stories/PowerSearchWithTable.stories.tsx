@@ -1,8 +1,11 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
-import {PowerSearch, usePowerSearchConfig} from '@astryxdesign/core/PowerSearch';
+import type {Meta, StoryObj} from '@storybook/react-vite';
+import {
+  PowerSearch,
+  usePowerSearchConfig,
+} from '@astryxdesign/core/PowerSearch';
 import type {PowerSearchFilter} from '@astryxdesign/core/PowerSearch';
 import {Table, pixel, proportional} from '@astryxdesign/core/Table';
 import type {TableColumn} from '@astryxdesign/core/Table';

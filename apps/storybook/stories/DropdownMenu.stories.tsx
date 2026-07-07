@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {useState} from 'react';
 import {DropdownMenu, DropdownMenuItem} from '@astryxdesign/core/DropdownMenu';
 import {Divider} from '@astryxdesign/core/Divider';

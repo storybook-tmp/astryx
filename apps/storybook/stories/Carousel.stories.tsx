@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import * as stylex from '@stylexjs/stylex';
 import {Carousel} from '@astryxdesign/core/Carousel';
 import {Thumbnail} from '@astryxdesign/core/Thumbnail';

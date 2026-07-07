@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {NavHeadingMenu, NavHeadingMenuItem} from '@astryxdesign/core/NavMenu';
 import {
   Cog6ToothIcon,
@@ -63,11 +63,7 @@ export const WithIcons: Story = {
           href="#"
         />
         <NavHeadingMenuItem label="Analytics" icon={ChartBarIcon} href="#" />
-        <NavHeadingMenuItem
-          label="Security"
-          icon={ShieldCheckIcon}
-          href="#"
-        />
+        <NavHeadingMenuItem label="Security" icon={ShieldCheckIcon} href="#" />
         <NavHeadingMenuItem label="Settings" icon={Cog6ToothIcon} href="#" />
       </>
     ),

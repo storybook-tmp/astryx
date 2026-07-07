@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {NumberInput} from '@astryxdesign/core/NumberInput';
 import {HashtagIcon, CurrencyDollarIcon} from '@heroicons/react/24/outline';
 

@@ -2,7 +2,7 @@
 
 import {useState} from 'react';
 import * as stylex from '@stylexjs/stylex';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Item} from '@astryxdesign/core/Item';
 import {Avatar} from '@astryxdesign/core/Avatar';
 import {Badge} from '@astryxdesign/core/Badge';

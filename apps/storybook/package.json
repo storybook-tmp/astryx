@@ -22,12 +22,17 @@
     "vega-lite": "^6.4.3"
   },
   "devDependencies": {
-    "@storybook/addon-docs": "^10.4.6",
-    "@storybook/addon-links": "^10.4.6",
-    "@storybook/react": "^10.4.6",
-    "@storybook/react-vite": "^10.4.6",
-    "@stylexjs/unplugin": "^0.19.0",
     "@astryxdesign/build": "*",
-    "storybook": "^10.4.6"
+    "@storybook/addon-docs": "^10.5.0-beta.0",
+    "@storybook/addon-links": "^10.5.0-beta.0",
+    "@storybook/addon-mcp": "https://pkg.pr.new/storybookjs/mcp/@storybook/addon-mcp@main",
+    "@storybook/addon-vitest": "^10.5.0-beta.0",
+    "@storybook/react-vite": "^10.5.0-beta.0",
+    "@stylexjs/unplugin": "^0.19.0",
+    "eslint-plugin-storybook": "10.5.0-beta.0",
+    "mockdate": "^3.0.5",
+    "msw": "^2.14.6",
+    "msw-storybook-addon": "^2.0.7",
+    "storybook": "^10.5.0-beta.0"
   }
 }

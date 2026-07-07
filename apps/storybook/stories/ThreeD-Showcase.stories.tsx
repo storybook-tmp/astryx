@@ -1,12 +1,8 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {useMemo} from 'react';
-import {
-  ThreeDChart,
-  ThreeDScatter,
-  ThreeDScatterGL,
-} from '@astryxdesign/lab';
+import {ThreeDChart, ThreeDScatter, ThreeDScatterGL} from '@astryxdesign/lab';
 import {MediaTheme} from '@astryxdesign/core/theme';
 
 const meta: Meta = {title: 'Lab/3DChart/PopArt'};

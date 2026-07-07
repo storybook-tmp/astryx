@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import React from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Popover} from '@astryxdesign/core/Popover';
 import type {PopoverTriggerRenderProps} from '@astryxdesign/core/Popover';
 import {Button} from '@astryxdesign/core/Button';

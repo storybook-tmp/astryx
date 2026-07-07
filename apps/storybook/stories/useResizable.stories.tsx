@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import * as stylex from '@stylexjs/stylex';
 import {
   colorVars,
@@ -290,10 +290,7 @@ export const MixedContainers: Story = {
                 xstyle={s.muted}>
                 Explorer
               </LayoutPanel>
-              <ResizeHandle
-                direction="horizontal"
-                resizable={sidebar.props}
-              />
+              <ResizeHandle direction="horizontal" resizable={sidebar.props} />
             </>
           }
           content={
@@ -313,10 +310,7 @@ export const MixedContainers: Story = {
                   }}>
                   Editor
                 </div>
-                <ResizeHandle
-                  direction="vertical"
-                  resizable={editor.props}
-                />
+                <ResizeHandle direction="vertical" resizable={editor.props} />
                 <div
                   {...stylex.props(s.card)}
                   style={{

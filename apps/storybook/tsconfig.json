@@ -20,6 +20,13 @@
         "../../packages/lab/src/*/index.ts",
         "../../packages/lab/src/*"
       ],
+      "@astryxdesign/vega": [
+        "../../packages/vega/src/index.ts"
+      ],
+      "@astryxdesign/vega/*": [
+        "../../packages/vega/src/*/index.ts",
+        "../../packages/vega/src/*"
+      ],
       "@astryxdesign/build/vite": [
         "../../packages/build/src/vite.ts"
       ]

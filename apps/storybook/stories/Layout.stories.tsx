@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import * as stylex from '@stylexjs/stylex';
 import {Card} from '@astryxdesign/core/Card';
 import {Section} from '@astryxdesign/core/Section';
@@ -743,9 +743,7 @@ export const ThemedLayout: Story = {
   render: () => (
     <HStack gap={6} xstyle={styles.storySection}>
       <VStack gap={3}>
-        <p {...stylex.props(styles.sectionLabel)}>
-          Stone Theme
-        </p>
+        <p {...stylex.props(styles.sectionLabel)}>Stone Theme</p>
         <Theme theme={stoneTheme}>
           <Card width={400}>
             <Layout
@@ -779,9 +777,7 @@ export const ThemedLayout: Story = {
       </VStack>
 
       <VStack gap={3}>
-        <p {...stylex.props(styles.sectionLabel)}>
-          Neutral Theme
-        </p>
+        <p {...stylex.props(styles.sectionLabel)}>Neutral Theme</p>
         <Theme theme={neutralTheme}>
           <Card width={400}>
             <Layout

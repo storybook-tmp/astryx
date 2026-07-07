@@ -1,10 +1,13 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import * as stylex from '@stylexjs/stylex';
 import {AvatarGroup, AvatarGroupOverflow} from '@astryxdesign/core/AvatarGroup';
 import {Avatar} from '@astryxdesign/core/Avatar';
 import {StatusDot} from '@astryxdesign/core/StatusDot';
-import {spacingVars, typographyVars} from '@astryxdesign/core/theme/tokens.stylex';
+import {
+  spacingVars,
+  typographyVars,
+} from '@astryxdesign/core/theme/tokens.stylex';
 
 const USERS = [
   {name: 'Alice Johnson', src: 'https://i.pravatar.cc/150?img=1', key: 'alice'},

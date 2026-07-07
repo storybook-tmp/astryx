@@ -1,10 +1,13 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import * as stylex from '@stylexjs/stylex';
 import {Avatar} from '@astryxdesign/core/Avatar';
 import {AvatarStatusDot} from '@astryxdesign/core/Avatar';
-import {spacingVars, typographyVars} from '@astryxdesign/core/theme/tokens.stylex';
+import {
+  spacingVars,
+  typographyVars,
+} from '@astryxdesign/core/theme/tokens.stylex';
 import {CheckIcon} from '@heroicons/react/24/solid';
 
 const styles = stylex.create({
@@ -213,10 +216,7 @@ export const FallbackChain: Story = {
         </div>
         <div>
           <p {...stylex.props(styles.heading)}>All invalid, no name</p>
-          <Avatar
-            src="https://invalid-url.example/broken.jpg"
-            size="large"
-          />
+          <Avatar src="https://invalid-url.example/broken.jpg" size="large" />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {
   TopNav,
   TopNavHeading,
@@ -50,9 +50,7 @@ export const Default: Story = {
       heading={
         <TopNavHeading
           heading="My App"
-          logo={
-            <NavIcon icon={<CubeIcon style={{width: 16, height: 16}} />} />
-          }
+          logo={<NavIcon icon={<CubeIcon style={{width: 16, height: 16}} />} />}
           href="#"
         />
       }
@@ -167,9 +165,7 @@ export const MegaMenu: Story = {
             <TopNavHeading
               heading="Acme"
               logo={
-                <NavIcon
-                  icon={<CubeIcon style={{width: 16, height: 16}} />}
-                />
+                <NavIcon icon={<CubeIcon style={{width: 16, height: 16}} />} />
               }
               href="#"
             />

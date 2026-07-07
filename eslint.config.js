@@ -4,6 +4,7 @@ import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import eslintReact from "@eslint-react/eslint-plugin";
 import reactCompiler from "eslint-plugin-react-compiler";
+import storybook from "eslint-plugin-storybook";
 import astryxPlugin from "./internal/eslint-plugin-astryx/index.js";
 
 /* global process */
@@ -353,4 +354,5 @@ export default tseslint.config(
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
+  storybook.configs["flat/recommended"],
 );

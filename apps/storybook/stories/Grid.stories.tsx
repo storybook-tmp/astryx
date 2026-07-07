@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import * as stylex from '@stylexjs/stylex';
 import {Grid, GridSpan} from '@astryxdesign/core/Grid';
 import {Card} from '@astryxdesign/core/Card';
@@ -174,7 +174,6 @@ export const ResponsiveAutoFit: Story = {
       </div>
       <div {...stylex.props(styles.container)}>
         <Text type="supporting" xstyle={styles.sectionLabel}>
-          
           Same grid with 6 items; looks fine because items fill the tracks
         </Text>
         <Grid columns={{minWidth: 200}} gap={4}>
