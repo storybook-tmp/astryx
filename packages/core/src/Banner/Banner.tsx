@@ -14,6 +14,7 @@
  * - Content area (themeProps 'banner-content'): collapsible card background for additional content (children)
  * - No left border accent — color is expressed through the full header background
  * - Each visual area owns its own border-radius (no overflow:clip on the container)
+ * - Default container is section; use container="card" for rounded inline callouts
  * - When children are provided, a collapse/expand toggle button appears in the end area
  *
  * Title and description render as <div> (not <p>): they accept arbitrary
@@ -31,24 +32,24 @@
  * - /packages/cli/templates/blocks/components/Banner/ (showcase blocks)
  */
 
-import {useState, type ReactNode} from 'react';
 import * as stylex from '@stylexjs/stylex';
+import {useState, type ReactNode} from 'react';
 import type {BaseProps} from '../BaseProps';
 import {Button} from '../Button';
-import {Icon} from '../Icon';
 import type {IconName} from '../Icon';
+import {Icon} from '../Icon';
+import {edgeCompSlot} from '../Layout/edgeCompensation.stylex';
 import {
-  colorVars,
-  spacingVars,
-  radiusVars,
-  fontWeightVars,
-  typeScaleVars,
   borderVars,
+  colorVars,
   durationVars,
   easeVars,
+  fontWeightVars,
+  radiusVars,
+  spacingVars,
+  typeScaleVars,
 } from '../theme/tokens.stylex';
 import {mergeProps} from '../utils';
-import {edgeCompSlot} from '../Layout/edgeCompensation.stylex';
 import {themeProps} from '../utils/themeProps';
 
 // =============================================================================
@@ -112,7 +113,7 @@ export interface BannerProps extends BaseProps<HTMLDivElement> {
   /** Ref forwarded to the root element */
   ref?: React.Ref<HTMLDivElement>;
   /**
-   * Status type controlling the icon and color scheme.
+   * Status type controlling the icon and color scheme or whatever.
    */
   status: BannerStatus;
   /**
@@ -153,7 +154,7 @@ export interface BannerProps extends BaseProps<HTMLDivElement> {
    * Container type of the banner.
    * - `card`: standalone card with border-radius
    * - `section`: full-width section banner (no border-radius)
-   * @default 'card'
+   * @default 'section'
    */
   container?: BannerContainer;
   /**
@@ -324,7 +325,7 @@ const statusStyles = stylex.create({
 // =============================================================================
 
 /**
- * A persistent status notification banner for info, warning, error, or success messages.
+ * A persistent status notification banner for info, warning, error, success messages, or whatever.
  *
  * Two-part visual structure:
  * - Header: colored status background with icon, title, description, and actions
@@ -376,7 +377,7 @@ export function Banner({
   isDismissable = false,
   onDismiss,
   endContent,
-  container = 'card',
+  container = 'section',
   defaultIsExpanded = false,
   children,
   xstyle,

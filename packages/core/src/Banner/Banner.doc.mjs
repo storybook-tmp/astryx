@@ -12,7 +12,7 @@ export const docs = {
       'Banner shows a persistent message at the top of a page or section. Use it for form errors, system updates, maintenance notices, or success confirmations that the user needs to see until they act on it.',
     bestPractices: [
       {guidance: true, description: 'Pick a status that matches the message: info for updates, warning for caution, error for problems, success for confirmations.'},
-      {guidance: true, description: 'Use the card container inside page content and the section container for full-width messages that span the entire page.'},
+      {guidance: true, description: 'Use the default section container for full-width messages that span the page; set container="card" for inline content.'},
       {guidance: true, description: 'Make info and success banners dismissable. Keep error banners visible until the user fixes the issue.'},
       {guidance: true, description: 'Keep titles short and scannable: "Payment failed" not "There was a problem processing your most recent payment."'},
       {guidance: false, description: 'Use Banner for short-lived messages that disappear on their own; use Toast instead.'},
@@ -78,8 +78,8 @@ export const docs = {
       name: 'container',
       type: "'card' | 'section'",
       description:
-        'Container type: card has border-radius; section is full-width with no border-radius for page-level use.',
-      default: "'card'",
+        'Container type: section is full-width with no border-radius for page-level use; card has border-radius for inline content.',
+      default: "'section'",
     },
     {
       name: 'children',
@@ -132,7 +132,7 @@ export const docsZh = {
       'Banner shows a persistent message at the top of a page or section. Use it for form errors, system updates, maintenance notices, or success confirmations that the user needs to see until they act on it.',
     bestPractices: [
       {guidance: true, description: 'Pick a status that matches the message: info for updates, warning for caution, error for problems, success for confirmations.'},
-      {guidance: true, description: 'Use the card container inside page content and the section container for full-width messages that span the entire page.'},
+      {guidance: true, description: 'Use the default section container for full-width messages that span the page; set container="card" for inline content.'},
       {guidance: true, description: 'Make info and success banners dismissable. Keep error banners visible until the user fixes the issue.'},
       {guidance: true, description: 'Keep titles short and scannable: "Payment failed" not "There was a problem processing your most recent payment."'},
       {guidance: false, description: 'Use Banner for short-lived messages that disappear on their own; use Toast instead.'},
@@ -155,7 +155,7 @@ export const docsZh = {
     {name: 'isDismissable', type: 'boolean', description: '横幅是否可被用户关闭。', default: 'false'},
     {name: 'onDismiss', type: '() => void', description: '点击关闭按钮时调用；无论是否提供此回调，横幅都会自动隐藏。'},
     {name: 'endContent', type: 'ReactNode', description: '渲染在头部区域末端对齐的操作内容，通常是按钮或链接。'},
-    {name: 'container', type: "'card' | 'section'", description: '视觉变体：card 带圆角；section 无圆角全宽，适用于页面级场景。', default: "'card'"},
+    {name: 'container', type: "'card' | 'section'", description: '视觉变体：section 默认为无圆角全宽，适用于页面级场景；card 带圆角，适用于内容区内联场景。', default: "'section'"},
     {name: 'children', type: 'ReactNode', description: '渲染在彩色头部下方卡片背景区域的内容。'},
     {name: 'defaultIsExpanded', type: 'boolean', description: '内容区域（children）是否初始展开。仅在提供 children 时相关。', default: 'false'},
     {
@@ -198,7 +198,7 @@ export const docsDense = {
       'Banner shows a persistent message at the top of a page or section. Use for form errors, system updates, maintenance notices, or success confirmations.',
     bestPractices: [
       {guidance: true, description: 'Match status to message: info for updates, warning for caution, error for problems, success for confirmations.'},
-      {guidance: true, description: 'Card container for inline content, section container for full-width page-level messages.'},
+      {guidance: true, description: 'Default section container for full-width messages; set container="card" for inline content.'},
       {guidance: true, description: 'Make info/success dismissable. Keep error banners until the issue is fixed.'},
       {guidance: true, description: 'Keep titles short: "Payment failed" not "There was a problem processing your payment."'},
       {guidance: false, description: 'Use for auto-dismissing messages; use Toast instead.'},
@@ -221,7 +221,7 @@ export const docsDense = {
     isDismissable: 'user can dismiss banner',
     onDismiss: 'dismiss callback; banner self-hides regardless',
     endContent: 'end-aligned action in header, typically button/link',
-    container: 'card=border-radius; section=full-width no radius for page-level',
+    container: 'section=full-width no radius default; card=border-radius for inline content',
     children: 'content in card-bg area below colored header',
     xstyle: 'StyleX layout customization via stylex.create()',
   },

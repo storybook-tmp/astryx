@@ -4,7 +4,8 @@
 /**
  * @file main.ts
  * @input Storybook React/Vite configuration, Astryx StyleX build plugin
- * @output Storybook config with Astryx source aliases, Codex MCP, tests, and static assets
+ * @output Storybook config with Astryx source aliases, Codex MCP, tests,
+ *   docgen service, and static assets
  * @position Storybook app configuration for local development, docs, and Codex review workflows
  *
  * SYNC: When modified, update /apps/storybook/README.md
@@ -42,6 +43,9 @@ const config: StorybookConfig = {
   },
   staticDirs: ['../public'],
   docs: {defaultName: 'Docs'},
+  features: {
+    experimentalDocgenServer: true,
+  },
   viteFinal: async config => {
     const filteredPlugins =
       config.plugins?.filter(

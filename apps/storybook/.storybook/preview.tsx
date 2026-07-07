@@ -2,8 +2,10 @@
 
 /**
  * @file preview.tsx
- * @input Storybook preview globals, Astryx themes, MSW handlers, and reset CSS
- * @output Shared decorators/loaders for rendering stories with production-like theme context
+ * @input Storybook preview globals, Astryx themes, MSW handlers, docs controls,
+ *   and reset CSS
+ * @output Shared decorators/loaders/parameters for rendering stories with
+ *   production-like theme context
  * @position Storybook preview runtime; keep provider and mock setup centralized for stories
  *
  * SYNC: When modified, update /apps/storybook/README.md
@@ -85,6 +87,9 @@ const withTheme: Decorator = (Story, context) => {
 
 const preview: Preview = {
   parameters: {
+    docs: {
+      codePanel: true,
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

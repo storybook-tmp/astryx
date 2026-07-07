@@ -3,7 +3,7 @@
 /**
  * @file Banner.test.tsx
  * @input Uses vitest, @testing-library/react, Banner component
- * @output Unit tests for Banner component behavior
+ * @output Unit tests for Banner component behavior, including section default
  * @position Testing; validates Banner.tsx implementation
  *
  * SYNC: When modified, update this header
@@ -168,18 +168,31 @@ describe('Banner', () => {
     expect(screen.getByTestId('end-btn')).toBeInTheDocument();
   });
 
-  it('renders card container by default', () => {
-    const {container} = render(<Banner status="info" title="Card Container" />);
-    const root = container.firstElementChild;
-    expect(root).toBeInTheDocument();
+  it('renders section container by default', () => {
+    const {container} = render(
+      <Banner status="info" title="Default Container" />,
+    );
+    expect(
+      container.querySelector('.astryx-banner[data-container="section"]'),
+    ).toBeInTheDocument();
   });
 
-  it('renders section container', () => {
+  it('renders card container when requested', () => {
+    const {container} = render(
+      <Banner status="info" title="Card Container" container="card" />,
+    );
+    expect(
+      container.querySelector('.astryx-banner[data-container="card"]'),
+    ).toBeInTheDocument();
+  });
+
+  it('renders section container when requested', () => {
     const {container} = render(
       <Banner status="info" title="Section Container" container="section" />,
     );
-    const root = container.firstElementChild;
-    expect(root).toBeInTheDocument();
+    expect(
+      container.querySelector('.astryx-banner[data-container="section"]'),
+    ).toBeInTheDocument();
   });
 
   // =========================================================================

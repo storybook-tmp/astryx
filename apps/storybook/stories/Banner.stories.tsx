@@ -111,6 +111,17 @@ export const SectionVariant: Story = {
   },
 };
 
+export const CardContainer: Story = {
+  name: 'Card Container',
+  args: {
+    status: 'info',
+    title: 'Billing profile updated',
+    description:
+      'This inline card treatment is available for banners placed inside page content.',
+    container: 'card',
+  },
+};
+
 export const CollapsibleContent: Story = {
   name: 'Collapsible Content (Collapsed)',
   args: {
