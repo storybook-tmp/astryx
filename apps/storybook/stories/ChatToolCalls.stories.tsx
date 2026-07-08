@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {ChatToolCalls, type ChatToolCallItem} from '@astryxdesign/core/Chat';
 import {useState, useCallback} from 'react';
 import {CodeBlock} from '@astryxdesign/core/CodeBlock';
@@ -431,11 +431,7 @@ Time:        6.1s`;
             duration: '6.1s',
             node: 'cli:remote-server',
             resultDetail: (
-              <CodeBlock
-                code={testOutput}
-                language="bash"
-                maxHeight="50vh"
-              />
+              <CodeBlock code={testOutput} language="bash" maxHeight="50vh" />
             ),
           },
           {
@@ -490,11 +486,7 @@ Time:        6.84s`;
             node: 'cli:remote-server',
             errorMessage: '4 tests failed',
             resultDetail: (
-              <CodeBlock
-                code={errorOutput}
-                language="bash"
-                maxHeight="50vh"
-              />
+              <CodeBlock code={errorOutput} language="bash" maxHeight="50vh" />
             ),
           },
         ]}

@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {HoverCard, useHoverCard} from '@astryxdesign/core/HoverCard';
 import {Button} from '@astryxdesign/core/Button';
 import {VStack, HStack} from '@astryxdesign/core/Layout';
@@ -91,9 +91,7 @@ export const CustomDelay: Story = {
     delay: 500,
     hideDelay: 300,
     content: <ProfileCard />,
-    children: (
-      <Button label="Slow hover (500ms)">Slow hover (500ms)</Button>
-    ),
+    children: <Button label="Slow hover (500ms)">Slow hover (500ms)</Button>,
   },
 };
 

@@ -27,6 +27,7 @@
   },
   "include": [
     ".storybook/**/*",
+    "vitest.config.ts",
     "stories/**/*"
   ]
 }

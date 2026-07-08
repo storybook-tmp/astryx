@@ -1,10 +1,13 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from 'eslint-plugin-storybook';
+
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import js from "@eslint/js";
-import tseslint from "typescript-eslint";
-import eslintReact from "@eslint-react/eslint-plugin";
-import reactCompiler from "eslint-plugin-react-compiler";
-import xdsPlugin from "./internal/eslint-plugin-astryx/index.js";
+import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import eslintReact from '@eslint-react/eslint-plugin';
+import reactCompiler from 'eslint-plugin-react-compiler';
+import xdsPlugin from './internal/eslint-plugin-astryx/index.js';
 
 /* global process */
 
@@ -21,8 +24,11 @@ import xdsPlugin from "./internal/eslint-plugin-astryx/index.js";
  *   CI=true pnpm lint            # Also triggers strict mode
  */
 
-const isStrictMode = process.env.ASTRYX_STRICT_LINT === '1' || process.env.CI === 'true';
-const xdsConfig = isStrictMode ? xdsPlugin.configs.strict : xdsPlugin.configs.recommended;
+const isStrictMode =
+  process.env.ASTRYX_STRICT_LINT === '1' || process.env.CI === 'true';
+const xdsConfig = isStrictMode
+  ? xdsPlugin.configs.strict
+  : xdsPlugin.configs.recommended;
 const reactSeverity = isStrictMode ? 'error' : 'warn';
 
 export default tseslint.config(
@@ -30,37 +36,37 @@ export default tseslint.config(
   ...tseslint.configs.recommended,
   {
     ignores: [
-      "**/dist/**",
-      "**/node_modules/**",
-      ".claude/**",
-      "**/internal/eslint-plugin-astryx/**",
-      ".github/scripts/**",
-      "scripts/**",
+      '**/dist/**',
+      '**/node_modules/**',
+      '.claude/**',
+      '**/internal/eslint-plugin-astryx/**',
+      '.github/scripts/**',
+      'scripts/**',
       // Changesets tooling (custom changelog module + config) is CommonJS
       // build/release glue, not shipped source — keep it out of the TS/ESM
       // lint pass (consistent with scripts/** above).
-      ".changeset/**",
+      '.changeset/**',
       // .mjs is ignored everywhere EXCEPT the CLI package, whose runtime is
       // entirely .mjs. The negations below opt packages/cli back into linting
       // (see the dedicated CLI block lower down). Scoped to packages/cli on
       // purpose — other packages' .mjs stay unlinted (#2468).
-      "**/*.mjs",
-      "!packages/cli/src/**/*.mjs",
-      "!packages/cli/bin/**/*.mjs",
-      "**/*.test-violations.tsx",
-      "apps/example-nextjs/*.js",
-      "**/next-env.d.ts",
-      "**/.next/**",
-      "apps/example-nextjs-source/*.js",
-      "apps/docsite/*.js",
-      "apps/docsite/scripts/**",
-      "apps/sandbox/*.js",
-      "apps/sandbox/out/**",
-      "packages/build/**",
+      '**/*.mjs',
+      '!packages/cli/src/**/*.mjs',
+      '!packages/cli/bin/**/*.mjs',
+      '**/*.test-violations.tsx',
+      'apps/example-nextjs/*.js',
+      '**/next-env.d.ts',
+      '**/.next/**',
+      'apps/example-nextjs-source/*.js',
+      'apps/docsite/*.js',
+      'apps/docsite/scripts/**',
+      'apps/sandbox/*.js',
+      'apps/sandbox/out/**',
+      'packages/build/**',
     ],
   },
   {
-    files: ["**/*.{ts,tsx}"],
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
@@ -69,103 +75,108 @@ export default tseslint.config(
       },
     },
     rules: {
-      "@typescript-eslint/no-unused-vars": ["warn", {
-        argsIgnorePattern: "^_",
-        varsIgnorePattern: "^_",
-        destructuredArrayIgnorePattern: "^_",
-        caughtErrorsIgnorePattern: "^_",
-      }],
-      "no-console": ["warn", { allow: ["warn", "error"] }],
-      "curly": "warn",
-      "@typescript-eslint/no-non-null-assertion": "warn",
-      "@typescript-eslint/consistent-type-assertions": ["warn", {
-        assertionStyle: "as",
-        objectLiteralTypeAssertions: "never",
-      }],
-      "@typescript-eslint/consistent-type-imports": [
-        "warn",
-        {fixStyle: "inline-type-imports"},
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
+      'no-console': ['warn', {allow: ['warn', 'error']}],
+      curly: 'warn',
+      '@typescript-eslint/no-non-null-assertion': 'warn',
+      '@typescript-eslint/consistent-type-assertions': [
+        'warn',
+        {
+          assertionStyle: 'as',
+          objectLiteralTypeAssertions: 'never',
+        },
+      ],
+      '@typescript-eslint/consistent-type-imports': [
+        'warn',
+        {fixStyle: 'inline-type-imports'},
       ],
     },
-  },
-  // Type-aware linting for core. Keep this scoped: projectService has a
+  }, // Type-aware linting for core. Keep this scoped: projectService has a
   // measurable startup cost, but catches async correctness issues syntax-only
   // lint cannot see.
   {
-    files: ["packages/core/src/**/*.{ts,tsx}"],
+    files: ['packages/core/src/**/*.{ts,tsx}'],
     languageOptions: {
       parserOptions: {
         projectService: true,
       },
     },
     rules: {
-      "@typescript-eslint/array-type": [
+      '@typescript-eslint/array-type': [
         reactSeverity,
-        {default: "array", readonly: "generic"},
+        {default: 'array', readonly: 'generic'},
       ],
-      "@typescript-eslint/await-thenable": reactSeverity,
-      "@typescript-eslint/no-array-delete": reactSeverity,
-      "@typescript-eslint/no-base-to-string": reactSeverity,
-      "@typescript-eslint/no-duplicate-type-constituents": reactSeverity,
-      "@typescript-eslint/no-dynamic-delete": reactSeverity,
-      "@typescript-eslint/no-floating-promises": reactSeverity,
-      "@typescript-eslint/no-for-in-array": reactSeverity,
-      "@typescript-eslint/no-implied-eval": reactSeverity,
-      "@typescript-eslint/no-import-type-side-effects": reactSeverity,
-      "@typescript-eslint/no-invalid-void-type": reactSeverity,
-      "@typescript-eslint/no-misused-promises": reactSeverity,
-      "@typescript-eslint/no-unnecessary-type-conversion": reactSeverity,
-      "@typescript-eslint/no-unnecessary-type-assertion": reactSeverity,
-      "@typescript-eslint/no-useless-default-assignment": reactSeverity,
-      "@typescript-eslint/no-redeclare": reactSeverity,
-      "@typescript-eslint/only-throw-error": reactSeverity,
-      "@typescript-eslint/prefer-includes": reactSeverity,
-      "@typescript-eslint/prefer-string-starts-ends-with": reactSeverity,
-      "@typescript-eslint/promise-function-async": [
+      '@typescript-eslint/await-thenable': reactSeverity,
+      '@typescript-eslint/no-array-delete': reactSeverity,
+      '@typescript-eslint/no-base-to-string': reactSeverity,
+      '@typescript-eslint/no-duplicate-type-constituents': reactSeverity,
+      '@typescript-eslint/no-dynamic-delete': reactSeverity,
+      '@typescript-eslint/no-floating-promises': reactSeverity,
+      '@typescript-eslint/no-for-in-array': reactSeverity,
+      '@typescript-eslint/no-implied-eval': reactSeverity,
+      '@typescript-eslint/no-import-type-side-effects': reactSeverity,
+      '@typescript-eslint/no-invalid-void-type': reactSeverity,
+      '@typescript-eslint/no-misused-promises': reactSeverity,
+      '@typescript-eslint/no-unnecessary-type-conversion': reactSeverity,
+      '@typescript-eslint/no-unnecessary-type-assertion': reactSeverity,
+      '@typescript-eslint/no-useless-default-assignment': reactSeverity,
+      '@typescript-eslint/no-redeclare': reactSeverity,
+      '@typescript-eslint/only-throw-error': reactSeverity,
+      '@typescript-eslint/prefer-includes': reactSeverity,
+      '@typescript-eslint/prefer-string-starts-ends-with': reactSeverity,
+      '@typescript-eslint/promise-function-async': [
         reactSeverity,
         {allowAny: false},
       ],
-      "@typescript-eslint/require-array-sort-compare": reactSeverity,
-      "@typescript-eslint/restrict-plus-operands": reactSeverity,
-      "@typescript-eslint/restrict-template-expressions": reactSeverity,
-      "@typescript-eslint/return-await": reactSeverity,
-      "@typescript-eslint/switch-exhaustiveness-check": reactSeverity,
+      '@typescript-eslint/require-array-sort-compare': reactSeverity,
+      '@typescript-eslint/restrict-plus-operands': reactSeverity,
+      '@typescript-eslint/restrict-template-expressions': reactSeverity,
+      '@typescript-eslint/return-await': reactSeverity,
+      '@typescript-eslint/switch-exhaustiveness-check': reactSeverity,
     },
-  },
-  // Copyright header — all source files must have the Meta copyright notice
+  }, // Copyright header — all source files must have the Meta copyright notice
   {
-    files: ["**/*.{ts,tsx}"],
-    ignores: ["**/*.d.ts", "**/dist/**"],
+    files: ['**/*.{ts,tsx}'],
+    ignores: ['**/*.d.ts', '**/dist/**'],
     plugins: {
       '@astryx': xdsPlugin,
     },
     rules: {
       '@astryx/copyright-header': 'error',
     },
-  },
-  // XDS design token enforcement - applies to core package (excluding theme files)
+  }, // XDS design token enforcement - applies to core package (excluding theme files)
   {
-    files: ["packages/core/src/**/*.{ts,tsx}"],
-    ignores: ["packages/core/src/theme/**"],
+    files: ['packages/core/src/**/*.{ts,tsx}'],
+    ignores: ['packages/core/src/theme/**'],
     ...xdsConfig,
     rules: {
       ...xdsConfig.rules,
       // Temporarily allow Children.* in files that need architectural fixes.
       // Tracked: OverflowList, MetadataList, Carousel need data-driven APIs.
-      '@astryx/no-react-introspection': ['error', {
-        allowFiles: [
-          'OverflowList/OverflowList',
-          'MetadataList/MetadataList',
-          'Carousel/Carousel',
-        ],
-      }],
+      '@astryx/no-react-introspection': [
+        'error',
+        {
+          allowFiles: [
+            'OverflowList/OverflowList',
+            'MetadataList/MetadataList',
+            'Carousel/Carousel',
+          ],
+        },
+      ],
     },
-  },
-  // React bug-prevention rules - applies to core package
+  }, // React bug-prevention rules - applies to core package
   // Uses @eslint-react for bugs that TypeScript alone cannot catch.
   // Children.*/cloneElement are already covered by @astryx/no-react-introspection.
   {
-    files: ["packages/core/src/**/*.{ts,tsx}"],
+    files: ['packages/core/src/**/*.{ts,tsx}'],
     plugins: {
       ...eslintReact.configs.recommended.plugins,
       'react-compiler': reactCompiler,
@@ -200,7 +211,8 @@ export default tseslint.config(
       '@eslint-react/dom-no-missing-iframe-sandbox': reactSeverity,
       '@eslint-react/dom-no-void-elements-with-children': reactSeverity,
       '@eslint-react/dom-no-dangerously-set-innerhtml': reactSeverity,
-      '@eslint-react/dom-no-dangerously-set-innerhtml-with-children': reactSeverity,
+      '@eslint-react/dom-no-dangerously-set-innerhtml-with-children':
+        reactSeverity,
       '@eslint-react/dom-no-find-dom-node': reactSeverity,
       '@eslint-react/dom-no-flush-sync': reactSeverity,
       '@eslint-react/dom-no-script-url': reactSeverity,
@@ -235,23 +247,21 @@ export default tseslint.config(
       '@eslint-react/web-api-no-leaked-resize-observer': reactSeverity,
       '@eslint-react/web-api-no-leaked-fetch': reactSeverity,
     },
-  },
-  // App preview surfaces may embed local pages, but every iframe must be sandboxed.
+  }, // App preview surfaces may embed local pages, but every iframe must be sandboxed.
   {
-    files: ["apps/docsite/**/*.{ts,tsx}", "apps/sandbox/**/*.{ts,tsx}"],
+    files: ['apps/docsite/**/*.{ts,tsx}', 'apps/sandbox/**/*.{ts,tsx}'],
     plugins: {
       ...eslintReact.configs.recommended.plugins,
     },
     rules: {
       '@eslint-react/dom-no-missing-iframe-sandbox': reactSeverity,
     },
-  },
-  // Browser documentation/demo surfaces should avoid unsafe new-tab links.
+  }, // Browser documentation/demo surfaces should avoid unsafe new-tab links.
   {
     files: [
-      "apps/docsite/**/*.{ts,tsx}",
-      "apps/sandbox/**/*.{ts,tsx}",
-      "apps/storybook/**/*.{ts,tsx}",
+      'apps/docsite/**/*.{ts,tsx}',
+      'apps/sandbox/**/*.{ts,tsx}',
+      'apps/storybook/**/*.{ts,tsx}',
     ],
     plugins: {
       ...eslintReact.configs.recommended.plugins,
@@ -259,98 +269,97 @@ export default tseslint.config(
     rules: {
       '@eslint-react/dom-no-unsafe-target-blank': reactSeverity,
     },
-  },
-  // Test files — relax rules for test ergonomics (must be after React rules
+  }, // Test files — relax rules for test ergonomics (must be after React rules
   // block so it overrides react-compiler/react-compiler)
   {
-    files: ["**/*.test.{ts,tsx}", "**/*.perf.test.{ts,tsx}"],
+    files: ['**/*.test.{ts,tsx}', '**/*.perf.test.{ts,tsx}'],
     rules: {
-      "no-console": "off",
-      "@typescript-eslint/no-non-null-assertion": "off",
-      "@typescript-eslint/consistent-type-assertions": "off",
-      "react-compiler/react-compiler": "off",
+      'no-console': 'off',
+      '@typescript-eslint/no-non-null-assertion': 'off',
+      '@typescript-eslint/consistent-type-assertions': 'off',
+      'react-compiler/react-compiler': 'off',
     },
-  },
-  // Non-production code — allow console.log for demos, tools, and examples
+  }, // Non-production code — allow console.log for demos, tools, and examples
   {
     files: [
-      "apps/storybook/stories/**/*.{ts,tsx}",
-      "apps/docsite/src/generated/**/*.{ts,tsx}",
-      "apps/sandbox/**/*.{ts,tsx}",
-      "apps/example-*/**/*.{ts,tsx}",
-      "internal/**/*.{ts,tsx}",
-      "packages/cli/templates/**/*.{ts,tsx}",
+      'apps/storybook/stories/**/*.{ts,tsx}',
+      'apps/docsite/src/generated/**/*.{ts,tsx}',
+      'apps/sandbox/**/*.{ts,tsx}',
+      'apps/example-*/**/*.{ts,tsx}',
+      'internal/**/*.{ts,tsx}',
+      'packages/cli/templates/**/*.{ts,tsx}',
     ],
     rules: {
-      "no-console": "off",
+      'no-console': 'off',
     },
-  },
-  // CLI runtime (.mjs). The CLI ships as ESM Node modules and was never linted
+  }, // CLI runtime (.mjs). The CLI ships as ESM Node modules and was never linted
   // (the global **/*.mjs ignore swallowed it; see #2468). This block gives the
   // .mjs sources a Node language environment and enforces the JSON-stdout
   // contract (#2467) at author time via @astryx/no-raw-console-cli.
   {
-    files: ["packages/cli/src/**/*.mjs", "packages/cli/bin/**/*.mjs"],
+    files: ['packages/cli/src/**/*.mjs', 'packages/cli/bin/**/*.mjs'],
     plugins: {
       '@astryx': xdsPlugin,
     },
     languageOptions: {
-      sourceType: "module",
+      sourceType: 'module',
       globals: {
         // Node globals (no `globals` package dependency in this repo).
-        process: "readonly",
-        console: "readonly",
-        Buffer: "readonly",
-        URL: "readonly",
-        URLSearchParams: "readonly",
-        TextEncoder: "readonly",
-        TextDecoder: "readonly",
-        setTimeout: "readonly",
-        clearTimeout: "readonly",
-        setInterval: "readonly",
-        clearInterval: "readonly",
-        setImmediate: "readonly",
-        clearImmediate: "readonly",
-        queueMicrotask: "readonly",
-        __dirname: "readonly",
-        __filename: "readonly",
-        global: "readonly",
-        globalThis: "readonly",
-        structuredClone: "readonly",
-        fetch: "readonly",
-        AbortController: "readonly",
+        process: 'readonly',
+        console: 'readonly',
+        Buffer: 'readonly',
+        URL: 'readonly',
+        URLSearchParams: 'readonly',
+        TextEncoder: 'readonly',
+        TextDecoder: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly',
+        setImmediate: 'readonly',
+        clearImmediate: 'readonly',
+        queueMicrotask: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+        global: 'readonly',
+        globalThis: 'readonly',
+        structuredClone: 'readonly',
+        fetch: 'readonly',
+        AbortController: 'readonly',
       },
     },
     rules: {
-      "@typescript-eslint/no-unused-vars": ["error", {
-        argsIgnorePattern: "^_",
-        varsIgnorePattern: "^_",
-        destructuredArrayIgnorePattern: "^_",
-        caughtErrorsIgnorePattern: "^_",
-      }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
       // Bare console.log corrupts --json stdout. Route human chatter through
       // humanLog(); console.error/console.warn (stderr) stay allowed.
-      "@astryx/no-raw-console-cli": "error",
+      '@astryx/no-raw-console-cli': 'error',
     },
-  },
-  // Copyright header for CLI .mjs sources (the main copyright block only
+  }, // Copyright header for CLI .mjs sources (the main copyright block only
   // covers .ts/.tsx).
   {
-    files: ["packages/cli/src/**/*.mjs", "packages/cli/bin/**/*.mjs"],
+    files: ['packages/cli/src/**/*.mjs', 'packages/cli/bin/**/*.mjs'],
     plugins: {
       '@astryx': xdsPlugin,
     },
     rules: {
       '@astryx/copyright-header': 'error',
     },
-  },
-  // CLI tests — relax author-ergonomics rules (test files emit freely and may
+  }, // CLI tests — relax author-ergonomics rules (test files emit freely and may
   // keep intentionally-unused fixtures). Must come after the CLI block above.
   {
-    files: ["packages/cli/**/*.test.mjs"],
+    files: ['packages/cli/**/*.test.mjs'],
     rules: {
-      "@astryx/no-raw-console-cli": "off",
-      "@typescript-eslint/no-unused-vars": "off",
+      '@astryx/no-raw-console-cli': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
     },
   },
+  storybook.configs['flat/recommended'],
 );

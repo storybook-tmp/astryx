@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import * as stylex from '@stylexjs/stylex';
 import {Section} from '@astryxdesign/core/Section';
 import {VStack, HStack} from '@astryxdesign/core/Layout';
@@ -189,8 +189,8 @@ export const PageLayout: Story = {
             <VStack gap={2}>
               <h3 {...stylex.props(styles.text)}>Main Content</h3>
               <p {...stylex.props(styles.text, styles.textSecondary)}>
-                This demonstrates how Layout can be used to create page
-                layouts with header, sidebar, and content areas.
+                This demonstrates how Layout can be used to create page layouts
+                with header, sidebar, and content areas.
               </p>
             </VStack>
           </LayoutContent>

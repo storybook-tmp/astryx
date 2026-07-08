@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import * as stylex from '@stylexjs/stylex';
 import {Divider} from '@astryxdesign/core/Divider';
 import {Card} from '@astryxdesign/core/Card';
@@ -109,9 +109,7 @@ export const FullBleed: Story = {
         <Card>
           <VStack gap={3}>
             <Text type="label">Normal divider</Text>
-            <Text type="body">
-              The divider respects container padding.
-            </Text>
+            <Text type="body">The divider respects container padding.</Text>
             <Divider />
             <Text type="body">Content below the divider.</Text>
           </VStack>
@@ -119,9 +117,7 @@ export const FullBleed: Story = {
         <Card>
           <VStack gap={3}>
             <Text type="label">Full bleed divider</Text>
-            <Text type="body">
-              The divider extends to container edges.
-            </Text>
+            <Text type="body">The divider extends to container edges.</Text>
             <Divider isFullBleed />
             <Text type="body">Content below the divider.</Text>
           </VStack>

@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import * as stylex from '@stylexjs/stylex';
 import {Button} from '@astryxdesign/core/Button';
 import {Badge} from '@astryxdesign/core/Badge';
@@ -270,11 +270,7 @@ export const LinkButton: Story = {
           rel="noopener noreferrer"
           variant="secondary"
         />
-        <Button
-          label="Ghost link"
-          href="https://example.com"
-          variant="ghost"
-        />
+        <Button label="Ghost link" href="https://example.com" variant="ghost" />
       </div>
       <div style={{display: 'flex', gap: '12px', alignItems: 'center'}}>
         <Button

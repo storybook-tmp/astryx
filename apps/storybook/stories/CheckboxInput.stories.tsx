@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {CheckboxInput} from '@astryxdesign/core/CheckboxInput';
 import {
   BellIcon,
@@ -211,11 +211,7 @@ export const AllVariations: Story = {
           gap: '16px',
           maxWidth: '400px',
         }}>
-        <CheckboxInput
-          label="Unchecked"
-          value={value1}
-          onChange={setValue1}
-        />
+        <CheckboxInput label="Unchecked" value={value1} onChange={setValue1} />
         <CheckboxInput label="Checked" value={value2} onChange={setValue2} />
         <CheckboxInput
           label="Indeterminate"

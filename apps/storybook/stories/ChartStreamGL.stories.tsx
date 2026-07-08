@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {useRef, useEffect, useState} from 'react';
 import {
   Chart,
@@ -352,7 +352,6 @@ export const MultiSensorOverlay: StoryObj = {
       <Stack direction="vertical" gap={4}>
         <Heading level={3}>Multi-Sensor Overlay</Heading>
         <Text type="supporting" color="secondary">
-          
           Three streams sharing one chart, same xDomain, same yDomain=[0, 100].
         </Text>
         <Chart

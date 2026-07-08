@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState, useEffect, useCallback} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Markdown} from '@astryxdesign/core/Markdown';
 import type {MarkdownSource} from '@astryxdesign/core/Markdown';
 import {Button} from '@astryxdesign/core/Button';

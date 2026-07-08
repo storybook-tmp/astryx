@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {MetadataList, MetadataListItem} from '@astryxdesign/core/MetadataList';
 import {Icon} from '@astryxdesign/core/Icon';
 import {Token} from '@astryxdesign/core/Token';
@@ -160,9 +160,7 @@ export const WithIcons: Story = {
         icon={<Icon icon={CalendarIcon} size="sm" />}>
         January 1, 2023
       </MetadataListItem>
-      <MetadataListItem
-        label="Tags"
-        icon={<Icon icon={TagIcon} size="sm" />}>
+      <MetadataListItem label="Tags" icon={<Icon icon={TagIcon} size="sm" />}>
         <span style={{display: 'flex', gap: 4}}>
           <Token label="component" />
           <Token label="astryx" />

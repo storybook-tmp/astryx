@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {CheckboxList, CheckboxListItem} from '@astryxdesign/core/CheckboxList';
 import {List} from '@astryxdesign/core/List';
 import {Card} from '@astryxdesign/core/Card';
@@ -104,11 +104,7 @@ export const DynamicItems: Story = {
     return (
       <CheckboxList {...restArgs} value={value} onChange={setValue}>
         {items.map(item => (
-          <CheckboxListItem
-            key={item.id}
-            label={item.label}
-            value={item.id}
-          />
+          <CheckboxListItem key={item.id} label={item.label} value={item.id} />
         ))}
       </CheckboxList>
     );
@@ -352,10 +348,7 @@ export const AllVariations: Story = {
           <CheckboxListItem label="Option A" value="a" />
           <CheckboxListItem label="Option B" value="b" />
         </CheckboxList>
-        <CheckboxList
-          label="Pre-selected"
-          value={value2}
-          onChange={setValue2}>
+        <CheckboxList label="Pre-selected" value={value2} onChange={setValue2}>
           <CheckboxListItem label="Email" value="email" />
           <CheckboxListItem label="SMS" value="sms" />
         </CheckboxList>

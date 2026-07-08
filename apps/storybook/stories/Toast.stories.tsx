@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {useState, useRef} from 'react';
 import {useToast, ToastViewport} from '@astryxdesign/core/Toast';
 import type {ToastType} from '@astryxdesign/core/Toast';

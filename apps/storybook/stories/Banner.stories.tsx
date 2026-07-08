@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Banner} from '@astryxdesign/core/Banner';
 import {Button} from '@astryxdesign/core/Button';
 import {Icon} from '@astryxdesign/core/Icon';
@@ -229,9 +229,7 @@ export const AllFeatures: Story = {
       <Banner
         status="info"
         title="With action button"
-        endContent={
-          <Button label="Learn more" variant="secondary" size="sm" />
-        }
+        endContent={<Button label="Learn more" variant="secondary" size="sm" />}
       />
       <Banner
         status="error"

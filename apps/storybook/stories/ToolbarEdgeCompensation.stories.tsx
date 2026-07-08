@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Toolbar} from '@astryxdesign/core/Toolbar';
 import {Button} from '@astryxdesign/core/Button';
 import {Card} from '@astryxdesign/core/Card';
@@ -1053,9 +1053,7 @@ export const CardLayoutContentWidthToolbar: Story = {
               <LayoutHeader hasDivider padding={0}>
                 <Toolbar
                   label="Card layout header"
-                  startContent={
-                    <Heading level={4}>Notifications</Heading>
-                  }
+                  startContent={<Heading level={4}>Notifications</Heading>}
                 />
               </LayoutHeader>
             }

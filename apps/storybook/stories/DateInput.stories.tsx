@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {DateInput} from '@astryxdesign/core/DateInput';
 import type {ISODateString} from '@astryxdesign/core/Calendar';
 import {Layout, LayoutContent} from '@astryxdesign/core/Layout';
@@ -326,9 +326,7 @@ export const AllVariations: Story = {
 export const Clearable: Story = {
   render: args => {
     const [value, setValue] = useState<ISODateString | undefined>('2026-04-06');
-    return (
-      <DateInput {...args} value={value} onChange={setValue} hasClear />
-    );
+    return <DateInput {...args} value={value} onChange={setValue} hasClear />;
   },
   args: {
     label: 'Event date',
@@ -339,9 +337,7 @@ export const Clearable: Story = {
 export const ClearableWithStatus: Story = {
   render: args => {
     const [value, setValue] = useState<ISODateString | undefined>('2026-04-06');
-    return (
-      <DateInput {...args} value={value} onChange={setValue} hasClear />
-    );
+    return <DateInput {...args} value={value} onChange={setValue} hasClear />;
   },
   args: {
     label: 'Deadline',

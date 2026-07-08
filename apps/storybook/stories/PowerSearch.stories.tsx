@@ -1,9 +1,12 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import React, {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {PowerSearch} from '@astryxdesign/core/PowerSearch';
-import type {PowerSearchConfig, PowerSearchFilter} from '@astryxdesign/core/PowerSearch';
+import type {
+  PowerSearchConfig,
+  PowerSearchFilter,
+} from '@astryxdesign/core/PowerSearch';
 import type {SearchSource, SearchableItem} from '@astryxdesign/core/Typeahead';
 import {Button} from '@astryxdesign/core/Button';
 import {MagnifyingGlassIcon} from '@heroicons/react/24/outline';

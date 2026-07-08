@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Preview, Decorator} from '@storybook/react';
+import type {Preview, Decorator} from '@storybook/react-vite';
 import * as React from 'react';
 import {Theme, LayerProvider} from '@astryxdesign/core';
 import {neutralTheme} from '@astryxdesign/theme-neutral';
@@ -78,7 +78,7 @@ const preview: Preview = {
       },
     },
     backgrounds: {
-      disable: true, // Disable backgrounds addon, use theme instead
+      disabled: true,
     },
     layout: 'fullscreen',
   },

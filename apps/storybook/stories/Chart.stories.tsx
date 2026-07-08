@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {useMemo} from 'react';
 import {
   Chart,
@@ -152,11 +152,7 @@ export const ScatterPlot: StoryObj = {
         <ChartGrid horizontal vertical />
         <ChartAxis position="bottom" />
         <ChartAxis position="left" />
-        <ChartDot
-          dataKey="mpg"
-          color={colors.categorical(1)[0]}
-          radius={3}
-        />
+        <ChartDot dataKey="mpg" color={colors.categorical(1)[0]} radius={3} />
         <ChartTooltip crosshair="xy" />
       </Chart>
     );

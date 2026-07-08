@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {NumberInput} from '@astryxdesign/core/NumberInput';
 import {HashtagIcon, CurrencyDollarIcon} from '@heroicons/react/24/outline';
 
@@ -232,11 +232,7 @@ export const AllVariations: Story = {
           onChange={setValue2}
           placeholder="Hidden label input"
         />
-        <NumberInput
-          label="With value"
-          value={value3}
-          onChange={setValue3}
-        />
+        <NumberInput label="With value" value={value3} onChange={setValue3} />
         <NumberInput
           label="Optional field"
           isOptional
@@ -516,9 +512,7 @@ export const WithEventHandlers: Story = {
 export const Clearable: Story = {
   render: args => {
     const [value, setValue] = useState<number | null>(args.value ?? 42);
-    return (
-      <NumberInput {...args} value={value} onChange={setValue} hasClear />
-    );
+    return <NumberInput {...args} value={value} onChange={setValue} hasClear />;
   },
   args: {
     label: 'Quantity',
@@ -529,9 +523,7 @@ export const Clearable: Story = {
 export const ClearableWithUnits: Story = {
   render: args => {
     const [value, setValue] = useState<number | null>(args.value ?? 75);
-    return (
-      <NumberInput {...args} value={value} onChange={setValue} hasClear />
-    );
+    return <NumberInput {...args} value={value} onChange={setValue} hasClear />;
   },
   args: {
     label: 'Progress',

@@ -15,7 +15,7 @@
  * 3. Large custom elements — single large height change, may miss ✗
  */
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {
   ChatLayout,
   ChatMessageList,
@@ -402,9 +402,7 @@ export const ScrollBehaviorComparison: StoryObj = {
           <ChatMessageList>
             {messages.map(msg => (
               <ChatMessage key={msg.id} sender={msg.role}>
-                {msg.text && (
-                  <Markdown density="compact">{msg.text}</Markdown>
-                )}
+                {msg.text && <Markdown density="compact">{msg.text}</Markdown>}
                 {msg.toolCalls && msg.toolCalls.length > 0 && (
                   <ChatToolCalls calls={msg.toolCalls} />
                 )}
@@ -565,9 +563,7 @@ export const RapidToolCalls: StoryObj = {
           <ChatMessageList>
             {messages.map(msg => (
               <ChatMessage key={msg.id} sender={msg.role}>
-                {msg.text && (
-                  <Markdown density="compact">{msg.text}</Markdown>
-                )}
+                {msg.text && <Markdown density="compact">{msg.text}</Markdown>}
                 {msg.toolCalls && msg.toolCalls.length > 0 && (
                   <ChatToolCalls calls={msg.toolCalls} />
                 )}
@@ -826,9 +822,7 @@ export const MixedStreamAndTools: StoryObj = {
           <ChatMessageList>
             {messages.map(msg => (
               <ChatMessage key={msg.id} sender={msg.role}>
-                {msg.text && (
-                  <Markdown density="compact">{msg.text}</Markdown>
-                )}
+                {msg.text && <Markdown density="compact">{msg.text}</Markdown>}
                 {msg.toolCalls && msg.toolCalls.length > 0 && (
                   <ChatToolCalls calls={msg.toolCalls} />
                 )}

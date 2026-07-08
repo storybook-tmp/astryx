@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Stepper, Step} from '@astryxdesign/lab/Stepper';
 import {TextInput} from '@astryxdesign/core/TextInput';
 import {Button} from '@astryxdesign/core/Button';
@@ -56,11 +56,7 @@ export const Default: Story = {
             label="Import data"
             description="Bring in existing projects"
           />
-          <Step
-            step={4}
-            label="Launch"
-            description="Go live with your team"
-          />
+          <Step step={4} label="Launch" description="Go live with your team" />
         </Stepper>
       </div>
     );

@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {CircularProgress} from '@astryxdesign/lab/CircularProgress';
 import {Text} from '@astryxdesign/core/Text';
 

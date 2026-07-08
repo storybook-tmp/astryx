@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {useState} from 'react';
 import {ToggleButton, ToggleButtonGroup} from '@astryxdesign/core/ToggleButton';
 import {
@@ -265,9 +265,7 @@ export const ColoredIconToolbar: Story = {
         <ToggleButton
           label="Bold"
           icon={<Icon icon={BoldIcon} size="sm" color="secondary" />}
-          pressedIcon={
-            <Icon icon={BoldIconSolid} size="sm" color="accent" />
-          }
+          pressedIcon={<Icon icon={BoldIconSolid} size="sm" color="accent" />}
           isPressed={pressed.bold}
           onPressedChange={() => toggle('bold')}
           isIconOnly
@@ -275,9 +273,7 @@ export const ColoredIconToolbar: Story = {
         <ToggleButton
           label="Italic"
           icon={<Icon icon={ItalicIcon} size="sm" color="secondary" />}
-          pressedIcon={
-            <Icon icon={ItalicIconSolid} size="sm" color="accent" />
-          }
+          pressedIcon={<Icon icon={ItalicIconSolid} size="sm" color="accent" />}
           isPressed={pressed.italic}
           onPressedChange={() => toggle('italic')}
           isIconOnly
@@ -294,9 +290,7 @@ export const ColoredIconToolbar: Story = {
         />
         <ToggleButton
           label="Strikethrough"
-          icon={
-            <Icon icon={StrikethroughIcon} size="sm" color="secondary" />
-          }
+          icon={<Icon icon={StrikethroughIcon} size="sm" color="secondary" />}
           pressedIcon={
             <Icon icon={StrikethroughIcon} size="sm" color="accent" />
           }
@@ -335,9 +329,7 @@ export const ColoredIconReactions: Story = {
         <ToggleButton
           label="Star"
           icon={<Icon icon={StarIcon} size="sm" color="secondary" />}
-          pressedIcon={
-            <Icon icon={StarIconSolid} size="sm" color="yellow" />
-          }
+          pressedIcon={<Icon icon={StarIconSolid} size="sm" color="yellow" />}
           isPressed={pressed.star}
           onPressedChange={() => toggle('star')}
           isIconOnly
@@ -353,9 +345,7 @@ export const ColoredIconReactions: Story = {
         <ToggleButton
           label="Save"
           icon={<Icon icon={BookmarkIcon} size="sm" color="secondary" />}
-          pressedIcon={
-            <Icon icon={BookmarkIconSolid} size="sm" color="blue" />
-          }
+          pressedIcon={<Icon icon={BookmarkIconSolid} size="sm" color="blue" />}
           isPressed={pressed.bookmark}
           onPressedChange={() => toggle('bookmark')}
           isIconOnly

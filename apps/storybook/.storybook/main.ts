@@ -2,7 +2,7 @@
 
 import type {StorybookConfig} from '@storybook/react-vite';
 import {astryxStylex} from '@astryxdesign/build/vite';
-import path from 'path';
+import path, {dirname} from 'path';
 import {fileURLToPath} from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -21,12 +21,21 @@ const config: StorybookConfig = {
     '../stories/**/*.mdx',
     '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
-  addons: ['@storybook/addon-links', '@storybook/addon-docs'],
+  addons: [
+    getAbsolutePath('@storybook/addon-links'),
+    getAbsolutePath('@storybook/addon-docs'),
+    getAbsolutePath('@storybook/addon-mcp'),
+    getAbsolutePath('@storybook/addon-vitest'),
+  ],
   framework: {
-    name: '@storybook/react-vite',
+    name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
   docs: {defaultName: 'Docs'},
+  features: {
+    experimentalDocgenServer: true,
+    experimentalReview: true,
+  },
   viteFinal: async config => {
     const filteredPlugins =
       config.plugins?.filter(
@@ -139,3 +148,7 @@ const config: StorybookConfig = {
 };
 
 export default config;
+
+function getAbsolutePath(value: string): string {
+  return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)));
+}

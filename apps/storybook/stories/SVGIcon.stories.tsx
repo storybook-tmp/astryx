@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Fragment} from 'react';
 import {
   SVGIcon,
@@ -242,12 +242,7 @@ export const Colors: Story = {
       <Stack direction="horizontal" gap={3}>
         {COLORS.map(c => (
           <Stack direction="vertical" key={c} gap={1} hAlign="center">
-            <SVGIcon
-              icon={bellIcon}
-              variation="linear"
-              size="lg"
-              color={c}
-            />
+            <SVGIcon icon={bellIcon} variation="linear" size="lg" color={c} />
             <Text type="label" color="secondary">
               {c}
             </Text>

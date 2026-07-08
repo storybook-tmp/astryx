@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {VegaChart} from '@astryxdesign/vega';
 import type {AnySpec} from '@astryxdesign/vega';
 

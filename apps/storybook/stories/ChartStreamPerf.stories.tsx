@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {useRef, useEffect, useState} from 'react';
 import {
   Chart,
@@ -160,9 +160,7 @@ export const ThrottledXDomain: StoryObj = {
 
     return (
       <Stack direction="vertical" gap={4}>
-        <Heading level={3}>
-          Performance: throttled xDomain (500ms)
-        </Heading>
+        <Heading level={3}>Performance: throttled xDomain (500ms)</Heading>
         <Stack direction="horizontal" gap={6}>
           <Text type="label">FPS: {fps}</Text>
           <Text type="label">Frame: {renderMs}ms</Text>
@@ -259,9 +257,7 @@ export const StressTest: StoryObj = {
     const c = colors.categorical(3);
     return (
       <Stack direction="vertical" gap={4}>
-        <Heading level={3}>
-          Stress: 3 streams + axes + grid @ 60fps
-        </Heading>
+        <Heading level={3}>Stress: 3 streams + axes + grid @ 60fps</Heading>
         <Text type="label">FPS: {fps}</Text>
         <Chart
           data={[

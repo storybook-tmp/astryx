@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {ButtonGroup} from '@astryxdesign/core/ButtonGroup';
 import {Button} from '@astryxdesign/core/Button';
 import {IconButton} from '@astryxdesign/core/IconButton';
@@ -36,10 +36,7 @@ const iconSize = {width: 16, height: 16} as const;
 export const Horizontal: Story = {
   render: () => (
     <ButtonGroup label="Clipboard actions">
-      <Button
-        label="Copy"
-        icon={<ClipboardDocumentIcon style={iconSize} />}
-      />
+      <Button label="Copy" icon={<ClipboardDocumentIcon style={iconSize} />} />
       <Button label="Cut" icon={<ScissorsIcon style={iconSize} />} />
       <Button label="Paste" icon={<ClipboardIcon style={iconSize} />} />
     </ButtonGroup>
@@ -61,14 +58,8 @@ export const Vertical: Story = {
 export const IconOnly: Story = {
   render: () => (
     <ButtonGroup label="Text formatting">
-      <IconButton
-        label="Bold"
-        icon={<Icon icon={BoldIcon} size="sm" />}
-      />
-      <IconButton
-        label="Italic"
-        icon={<Icon icon={ItalicIcon} size="sm" />}
-      />
+      <IconButton label="Bold" icon={<Icon icon={BoldIcon} size="sm" />} />
+      <IconButton label="Italic" icon={<Icon icon={ItalicIcon} size="sm" />} />
       <IconButton
         label="Underline"
         icon={<Icon icon={UnderlineIcon} size="sm" />}

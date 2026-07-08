@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {
   Fragment,
   type ReactElement,
@@ -250,9 +250,7 @@ export const DefaultRegistryIcons: StoryObj = {
 
     return (
       <Stack direction="vertical" gap={3}>
-        <Text type="large">
-          Default Registry Icons \u2192 SVGIcon System
-        </Text>
+        <Text type="large">Default Registry Icons \u2192 SVGIcon System</Text>
         <Text type="supporting">
           {converted.length} icons auto-converted. Heuristic: containment-based
           layer classification (only elements fully contained within a larger

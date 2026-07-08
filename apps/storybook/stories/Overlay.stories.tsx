@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import React, {useState} from 'react';
 import * as stylex from '@stylexjs/stylex';
 import {Overlay, useOverlay} from '@astryxdesign/core/Overlay';

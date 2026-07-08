@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import * as stylex from '@stylexjs/stylex';
 import {Collapsible, CollapsibleGroup} from '@astryxdesign/core/Collapsible';
 import {Card} from '@astryxdesign/core/Card';
@@ -87,7 +87,8 @@ export const MultipleMode: Story = {
         <Card>
           <Collapsible trigger="What is Astryx?" value="faq1">
             <p {...stylex.props(styles.text)}>
-              Astryx is a design system for building internal tools and products.
+              Astryx is a design system for building internal tools and
+              products.
             </p>
           </Collapsible>
         </Card>
@@ -171,7 +172,6 @@ export const WithoutCard: Story = {
     <VStack gap={2}>
       <Collapsible trigger="Show more details">
         <p {...stylex.props(styles.text)}>
-          
           Collapsible works anywhere; it doesn't require a card wrapper.
         </p>
       </Collapsible>
@@ -212,9 +212,7 @@ export const FAQ: Story = {
           </Collapsible>
         </Card>
         <Card>
-          <Collapsible
-            trigger="What payment methods are accepted?"
-            value="q4">
+          <Collapsible trigger="What payment methods are accepted?" value="q4">
             <p {...stylex.props(styles.text)}>
               We accept Visa, Mastercard, American Express, and PayPal.
             </p>

@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Thumbnail} from '@astryxdesign/core/Thumbnail';
 
 const meta: Meta<typeof Thumbnail> = {
@@ -132,9 +132,7 @@ export const Placeholder: Story = {
         </p>
       );
     }
-    return (
-      <Thumbnail label="report.pdf" onRemove={() => setVisible(false)} />
-    );
+    return <Thumbnail label="report.pdf" onRemove={() => setVisible(false)} />;
   },
 };
 

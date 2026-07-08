@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Kbd} from '@astryxdesign/core/Kbd';
 import {Text} from '@astryxdesign/core/Text';
 
@@ -192,8 +192,8 @@ export const InlineWithText: Story = {
         Press <Kbd keys="escape" /> to close the dialog.
       </Text>
       <Text type="body">
-        Navigate with <Kbd keys="up" /> and <Kbd keys="down" /> arrow
-        keys, then press <Kbd keys="enter" /> to select.
+        Navigate with <Kbd keys="up" /> and <Kbd keys="down" /> arrow keys, then
+        press <Kbd keys="enter" /> to select.
       </Text>
     </div>
   ),

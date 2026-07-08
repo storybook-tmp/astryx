@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Tokenizer} from '@astryxdesign/core/Tokenizer';
 import type {SearchableItem, SearchSource} from '@astryxdesign/core/Typeahead';
 import {Button} from '@astryxdesign/core/Button';
@@ -282,10 +282,7 @@ export const OverflowLayer: Story = {
 
 export const WithEndContent: Story = {
   render: args => {
-    const [value, setValue] = useState<SearchableItem[]>([
-      users[0],
-      users[2],
-    ]);
+    const [value, setValue] = useState<SearchableItem[]>([users[0], users[2]]);
     return (
       <Tokenizer
         {...args}

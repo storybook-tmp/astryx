@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {MobileNav} from '@astryxdesign/core/MobileNav';
 import {
   SideNav,
@@ -128,11 +128,7 @@ export const WithSideNavChildren: Story = {
           />
         </SideNavSection>
         <SideNavSection title="Settings">
-          <SideNavItem
-            label="General"
-            icon={Cog6ToothIcon}
-            href="/settings"
-          />
+          <SideNavItem label="General" icon={Cog6ToothIcon} href="/settings" />
         </SideNavSection>
       </>
     );
@@ -184,11 +180,7 @@ export const ResponsivePattern: Story = {
           />
         </SideNavSection>
         <SideNavSection title="Settings">
-          <SideNavItem
-            label="General"
-            icon={Cog6ToothIcon}
-            href="/settings"
-          />
+          <SideNavItem label="General" icon={Cog6ToothIcon} href="/settings" />
           <SideNavItem label="Team" icon={UserGroupIcon} href="/team" />
         </SideNavSection>
       </>
@@ -220,9 +212,7 @@ export const ResponsivePattern: Story = {
           header={
             <SideNavHeading
               icon={
-                <NavIcon
-                  icon={<CubeIcon style={{width: 16, height: 16}} />}
-                />
+                <NavIcon icon={<CubeIcon style={{width: 16, height: 16}} />} />
               }
               heading="My App"
               headingHref="/"
@@ -289,11 +279,7 @@ export const CustomWidth: Story = {
               isSelected
               href="/dashboard"
             />
-            <SideNavItem
-              label="Projects"
-              icon={FolderIcon}
-              href="/projects"
-            />
+            <SideNavItem label="Projects" icon={FolderIcon} href="/projects" />
           </SideNavSection>
         </MobileNav>
       </>
@@ -326,11 +312,7 @@ export const WithoutTitle: Story = {
               isSelected
               href="/dashboard"
             />
-            <SideNavItem
-              label="Projects"
-              icon={FolderIcon}
-              href="/projects"
-            />
+            <SideNavItem label="Projects" icon={FolderIcon} href="/projects" />
           </SideNavSection>
         </MobileNav>
       </>

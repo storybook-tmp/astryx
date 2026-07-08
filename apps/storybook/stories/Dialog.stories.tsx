@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Dialog, DialogHeader} from '@astryxdesign/core/Dialog';
 import {
   Layout,
@@ -78,8 +78,8 @@ function BasicModalExample() {
             <LayoutContent>
               <Text type="body">
                 This is a modal using the native &lt;dialog&gt; element with
-                Layout for structured content. Click outside or press Escape
-                to close.
+                Layout for structured content. Click outside or press Escape to
+                close.
               </Text>
             </LayoutContent>
           }
@@ -191,9 +191,7 @@ function WideModalExample() {
           }
           content={
             <LayoutContent>
-              <Text type="body">
-                This modal has a custom width of 600px.
-              </Text>
+              <Text type="body">This modal has a custom width of 600px.</Text>
             </LayoutContent>
           }
           footer={

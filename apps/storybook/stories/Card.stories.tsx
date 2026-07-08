@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import * as stylex from '@stylexjs/stylex';
 import {Card} from '@astryxdesign/core/Card';
 import {Section} from '@astryxdesign/core/Section';
@@ -121,8 +121,8 @@ export const WithInnerLayout: Story = {
         content={
           <LayoutContent>
             <p {...stylex.props(styles.text, styles.textSecondary)}>
-              When using Layout, the layout uses negative margin to escape
-              the container padding, then manages its own padding.
+              When using Layout, the layout uses negative margin to escape the
+              container padding, then manages its own padding.
             </p>
           </LayoutContent>
         }

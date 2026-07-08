@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {AppShell} from '@astryxdesign/core/AppShell';
 import {Banner} from '@astryxdesign/core/Banner';
 import {Badge} from '@astryxdesign/core/Badge';
@@ -91,9 +91,7 @@ function AppTopNav({endContent}: {endContent?: React.ReactNode}) {
       heading={
         <TopNavHeading
           heading="Acme App"
-          logo={
-            <NavIcon icon={<CubeIcon style={{width: 16, height: 16}} />} />
-          }
+          logo={<NavIcon icon={<CubeIcon style={{width: 16, height: 16}} />} />}
         />
       }
       startContent={
@@ -174,9 +172,7 @@ function SideNavWithHeader() {
     <SideNav
       header={
         <SideNavHeading
-          icon={
-            <NavIcon icon={<CubeIcon style={{width: 16, height: 16}} />} />
-          }
+          icon={<NavIcon icon={<CubeIcon style={{width: 16, height: 16}} />} />}
           heading="Acme App"
           headingHref="#"
         />

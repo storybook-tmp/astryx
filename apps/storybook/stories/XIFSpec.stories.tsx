@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Fragment} from 'react';
 import {
   SVGIcon,
@@ -78,10 +78,10 @@ export const SpecExamples: StoryObj = {
     <Stack direction="vertical" gap={3}>
       <Heading level={3}>XIF Spec Examples</Heading>
       <Text type="supporting">
-        Icons defined using the Astryx Icon Format specification. Each demonstrates
-        a different capability: stroke-only, two-layer knockout, composable
-        slots, animation declarations, personality overrides, and bold geometry
-        overrides.
+        Icons defined using the Astryx Icon Format specification. Each
+        demonstrates a different capability: stroke-only, two-layer knockout,
+        composable slots, animation declarations, personality overrides, and
+        bold geometry overrides.
       </Text>
 
       <div
@@ -127,9 +127,7 @@ export const SpecExamples: StoryObj = {
                   {xif.name}
                 </Text>
                 {features.length > 0 && (
-                  <Text
-                    type="supporting"
-                    style={{fontSize: 9, marginTop: 2}}>
+                  <Text type="supporting" style={{fontSize: 9, marginTop: 2}}>
                     {features.join(' ')}
                   </Text>
                 )}
@@ -592,9 +590,7 @@ export const PathTransformPlayground: StoryObj = {
         <Divider />
 
         {/* Combined: Rounding + Curvature presets */}
-        <Heading level={4}>
-          Personality Presets (combined transforms)
-        </Heading>
+        <Heading level={4}>Personality Presets (combined transforms)</Heading>
         <div
           style={{
             display: 'grid',
@@ -610,11 +606,7 @@ export const PathTransformPlayground: StoryObj = {
             {label: 'Friendly', r: 0.5, c: 0.15},
             {label: 'Playful', r: 0.8, c: 0.3},
           ].map(p => (
-            <Stack
-              key={p.label}
-              direction="vertical"
-              hAlign="center"
-              gap={0}>
+            <Stack key={p.label} direction="vertical" hAlign="center" gap={0}>
               <Text type="label" style={{fontSize: 10}}>
                 {p.label}
               </Text>

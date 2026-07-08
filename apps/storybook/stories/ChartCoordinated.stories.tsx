@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {useState, useMemo} from 'react';
 import {
   Chart,
@@ -143,11 +143,7 @@ export const CoordinatedViews: StoryObj = {
         {/* Bar chart — reacts to brush */}
         <Stack direction="vertical" gap={1}>
           <Text type="label">Average MPG by Origin (filtered)</Text>
-          <Chart
-            data={barData}
-            xKey="origin"
-            yKeys={['avgMpg']}
-            height={200}>
+          <Chart data={barData} xKey="origin" yKeys={['avgMpg']} height={200}>
             <ChartGrid horizontal />
             <ChartAxis position="bottom" />
             <ChartAxis position="left" />

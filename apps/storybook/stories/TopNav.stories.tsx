@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {TopNav, TopNavHeading, TopNavItem} from '@astryxdesign/core/TopNav';
 import {NavIcon} from '@astryxdesign/core/NavIcon';
 import {Button} from '@astryxdesign/core/Button';
@@ -87,9 +87,7 @@ export const WithLogo: Story = {
     heading: (
       <TopNavHeading
         heading="Dashboard"
-        logo={
-          <NavIcon icon={<CubeIcon style={{width: 16, height: 16}} />} />
-        }
+        logo={<NavIcon icon={<CubeIcon style={{width: 16, height: 16}} />} />}
         href="#"
       />
     ),
@@ -117,9 +115,7 @@ export const TitleOnly: Story = {
     heading: (
       <TopNavHeading
         heading="Simple App"
-        logo={
-          <NavIcon icon={<HomeIcon style={{width: 16, height: 16}} />} />
-        }
+        logo={<NavIcon icon={<HomeIcon style={{width: 16, height: 16}} />} />}
       />
     ),
     endContent: <Button label="Sign in" variant="primary" />,
@@ -154,9 +150,7 @@ export const CenteredNavigation: Story = {
       heading={
         <TopNavHeading
           heading="My App"
-          logo={
-            <NavIcon icon={<CubeIcon style={{width: 16, height: 16}} />} />
-          }
+          logo={<NavIcon icon={<CubeIcon style={{width: 16, height: 16}} />} />}
           href="#"
         />
       }
@@ -195,9 +189,7 @@ export const CenteredWithStartContent: Story = {
         <TopNavHeading
           heading="Dashboard"
           logo={
-            <NavIcon
-              icon={<ChartBarIcon style={{width: 16, height: 16}} />}
-            />
+            <NavIcon icon={<ChartBarIcon style={{width: 16, height: 16}} />} />
           }
           href="#"
         />
@@ -234,9 +226,7 @@ export const CenterContentWithoutEnd: Story = {
     heading: (
       <TopNavHeading
         heading="My App"
-        logo={
-          <NavIcon icon={<CubeIcon style={{width: 16, height: 16}} />} />
-        }
+        logo={<NavIcon icon={<CubeIcon style={{width: 16, height: 16}} />} />}
         href="#"
       />
     ),
@@ -257,9 +247,7 @@ export const FullExample: Story = {
         <TopNavHeading
           heading="Enterprise Dashboard"
           logo={
-            <NavIcon
-              icon={<ChartBarIcon style={{width: 16, height: 16}} />}
-            />
+            <NavIcon icon={<ChartBarIcon style={{width: 16, height: 16}} />} />
           }
           href="#"
         />

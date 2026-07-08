@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {ProgressBar} from '@astryxdesign/core/ProgressBar';
 
 const meta: Meta<typeof ProgressBar> = {
@@ -77,31 +77,11 @@ export const Variants: Story = {
         gap: '16px',
         width: '300px',
       }}>
-      <ProgressBar
-        value={60}
-        label="Accent"
-        variant="accent"
-        hasValueLabel
-      />
-      <ProgressBar
-        value={80}
-        label="Success"
-        variant="success"
-        hasValueLabel
-      />
-      <ProgressBar
-        value={50}
-        label="Warning"
-        variant="warning"
-        hasValueLabel
-      />
+      <ProgressBar value={60} label="Accent" variant="accent" hasValueLabel />
+      <ProgressBar value={80} label="Success" variant="success" hasValueLabel />
+      <ProgressBar value={50} label="Warning" variant="warning" hasValueLabel />
       <ProgressBar value={92} label="Error" variant="error" hasValueLabel />
-      <ProgressBar
-        value={35}
-        label="Neutral"
-        variant="neutral"
-        hasValueLabel
-      />
+      <ProgressBar value={35} label="Neutral" variant="neutral" hasValueLabel />
     </div>
   ),
 };

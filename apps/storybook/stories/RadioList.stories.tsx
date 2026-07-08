@@ -1,7 +1,7 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import {useState} from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {RadioList, RadioListItem} from '@astryxdesign/core/RadioList';
 
 const meta: Meta<typeof RadioList> = {
@@ -215,11 +215,7 @@ export const WithStartContent: Story = {
           value="email"
           startContent={<span>📧</span>}
         />
-        <RadioListItem
-          label="SMS"
-          value="sms"
-          startContent={<span>💬</span>}
-        />
+        <RadioListItem label="SMS" value="sms" startContent={<span>💬</span>} />
         <RadioListItem
           label="Push notification"
           value="push"

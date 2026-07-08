@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {
   ChatLayout,
   ChatMessageList,
@@ -472,9 +472,7 @@ export const FullAIChat: StoryObj = {
             placeholder="Ask about the codebase..."
           />
         }
-        footerActions={
-          <Button label="Claude Opus" variant="ghost" size="md" />
-        }
+        footerActions={<Button label="Claude Opus" variant="ghost" size="md" />}
         sendActions={
           <Button
             label="Microphone"

@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {Citation} from '@astryxdesign/core/Citation';
 
 const meta: Meta<typeof Citation> = {
@@ -61,7 +61,13 @@ export const NoLink: Story = {
 
 export const Variants: Story = {
   render: () => (
-    <div style={{display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap'}}>
+    <div
+      style={{
+        display: 'flex',
+        gap: '12px',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+      }}>
       <Citation
         source={{title: 'React Docs', url: 'https://react.dev'}}
         number={1}
@@ -82,7 +88,10 @@ export const Variants: Story = {
         variant="label"
       />
       <Citation
-        source={{title: 'A very long source title that should be truncated with ellipsis'}}
+        source={{
+          title:
+            'A very long source title that should be truncated with ellipsis',
+        }}
         number={4}
         variant="label"
       />

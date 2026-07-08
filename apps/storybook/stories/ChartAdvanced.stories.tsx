@@ -1,6 +1,6 @@
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-import type {Meta, StoryObj} from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react-vite';
 import {
   Chart,
   ChartAxis,
@@ -199,9 +199,7 @@ function ZeroCenteredDemo() {
   const colors = useChartColors();
   return (
     <Stack direction="vertical" gap={4}>
-      <Heading level={3}>
-        Zero-Centered (yBaseline=&quot;zero&quot;)
-      </Heading>
+      <Heading level={3}>Zero-Centered (yBaseline=&quot;zero&quot;)</Heading>
       <Chart
         data={plData}
         xKey="month"
